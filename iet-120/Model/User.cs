@@ -21,9 +21,13 @@ namespace iet_120.Model
         [Display(Name = "Nachname")]
         public string Surname { get; set; }
         [Required]
+        [RegularExpression(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$", ErrorMessage = "Email ist ungültig.")]
+        [Display(Name = "E-Mail")]
         public string Email { get; set; }
         [Required]
+        [Display(Name = "Passwort")]
         public string Password { get; set; }
+        [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}")]
         public DateTime CreateAt { get; set; }
     }
 }
