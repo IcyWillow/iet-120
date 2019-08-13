@@ -64,6 +64,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Notification\PropertyChangedNotification.cs" />
+    <Compile Include="ViewModel\UserViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -72,6 +75,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="CustomValidationAttributes\Unique.cs" />
     <Compile Include="Data\Context.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -79,13 +83,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201908131551429_CreateUserTable.cs" />
-    <Compile Include="Migrations\201908131551429_CreateUserTable.Designer.cs">
-      <DependentUpon>201908131551429_CreateUserTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908131554542_CreateWordTable.cs" />
-    <Compile Include="Migrations\201908131554542_CreateWordTable.Designer.cs">
-      <DependentUpon>201908131554542_CreateWordTable.cs</DependentUpon>
+    <Compile Include="Migrations\201908131943377_CreateUserTable.cs" />
+    <Compile Include="Migrations\201908131943377_CreateUserTable.Designer.cs">
+      <DependentUpon>201908131943377_CreateUserTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\User.cs" />
@@ -103,11 +103,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201908131551429_CreateUserTable.resx">
-      <DependentUpon>201908131551429_CreateUserTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908131554542_CreateWordTable.resx">
-      <DependentUpon>201908131554542_CreateWordTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908131943377_CreateUserTable.resx">
+      <DependentUpon>201908131943377_CreateUserTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -122,6 +119,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

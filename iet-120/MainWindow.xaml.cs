@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using iet_120.Model;
 
 namespace iet_120
 {
@@ -20,6 +21,7 @@ namespace iet_120
     /// </summary>
     public partial class MainWindow : Window
     {
+        public User User;
         public MainWindow()
         {
             InitializeComponent();

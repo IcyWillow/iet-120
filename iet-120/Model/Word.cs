@@ -5,10 +5,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using iet_120.Notification;
 
 namespace iet_120.Model
 {
-    public class Word
+    public class Word : PropertyChangedNotification
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
