@@ -25,17 +25,12 @@ namespace iet_120
         public MainWindow()
         {
             InitializeComponent();
+
+            RegisterWindow OP = new RegisterWindow();
+        
+            OP.Show();
         }
         
-        private void ButtonOK_Click(object sender, RoutedEventArgs e)
-        {
-          
-        }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (BindingGroup.CommitEdit())
-                DialogResult = true;
-        }
     }
 }
