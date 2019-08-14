@@ -24,6 +24,7 @@ namespace iet_120.Data
 
         public virtual DbSet<Word> Words { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Highscore> Highscores { get; set; }
    
     }
 

@@ -2,23 +2,16 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml;
-using iet_120.CustomValidationAttributes;
+using System.Windows.Controls;
 using iet_120.Notification;
 
 namespace iet_120.Model
 {
-    public class User : PropertyChangedNotification
+    public class User
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
-        public int Id {  
-            get { return GetValue(() => Id); }
-            set { SetValue(() => Id, value); } }
+        public int Id { get; set; }
         [Required]
         [Display(Name = "Anrede")]
         public string Salutation { get; set; }
@@ -27,11 +20,10 @@ namespace iet_120.Model
         public string Firstname { get; set; }
         [Required]
         [Display(Name = "Nachname")]
-        public string Surname { get; set; }
+        public string Lastname { get; set; }
         [Required]
         [RegularExpression(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$", ErrorMessage = "E-mail ist ungültig.")]
         [Display(Name = "E-Mail")]
-        [Unique(ErrorMessage = "Email existiert bereits.")]
         public string Email { get; set; }
         [Required]
         [Display(Name = "Passwort")]
@@ -39,5 +31,9 @@ namespace iet_120.Model
         public string Password { get; set; }
         [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}")]
         public DateTime CreateAt { get; set; }
+
+
     }
+
+
 }

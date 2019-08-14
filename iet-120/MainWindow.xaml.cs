@@ -26,5 +26,16 @@ namespace iet_120
         {
             InitializeComponent();
         }
+        
+        private void ButtonOK_Click(object sender, RoutedEventArgs e)
+        {
+          
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (BindingGroup.CommitEdit())
+                DialogResult = true;
+        }
     }
 }
