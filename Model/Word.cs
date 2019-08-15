@@ -24,9 +24,6 @@ namespace iet_120.Model
         [Display(Name = "Erstellt am")]
         [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}")]
         public DateTime CreatedAt { get; set; }
-        [Display(Name = "Geändert am")]
-        [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}")]
-        public DateTime UpdatedAt { get; set; }
 
     }
 }

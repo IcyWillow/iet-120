@@ -12,6 +12,8 @@ namespace iet_120.Model
         [Required]
         public int Points { get; set; }
         [Required]
+        public string GameWord { get; set; }
+        [Required]
         public int UserId { get; set; }
         [ForeignKey("UserId")]
         public User User { get; set; }
