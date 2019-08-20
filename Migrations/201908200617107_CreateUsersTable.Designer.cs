@@ -13,7 +13,7 @@ namespace iet_120.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201908140505374_CreateUsersTable"; }
+            get { return "201908200617107_CreateUsersTable"; }
         }
         
         string IMigrationMetadata.Source

@@ -13,6 +13,7 @@ namespace iet_120.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Points = c.Int(nullable: false),
+                        GameWord = c.String(nullable: false),
                         UserId = c.Int(nullable: false),
                         CreatedAt = c.DateTime(nullable: false),
                     })
@@ -40,9 +41,10 @@ namespace iet_120.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(nullable: false, maxLength: 30),
+                        IsActive = c.Boolean(nullable: false),
                         UserId = c.Int(nullable: false),
                         CreatedAt = c.DateTime(nullable: false),
-                        UpdatedAt = c.DateTime(nullable: false),
+                        UpdatedAt = c.DateTime(nullable:false)
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Users", t => t.UserId, cascadeDelete: true)
