@@ -19,6 +19,7 @@
 
         <Label Content="Kein Account?" VerticalAlignment="Top" Margin="117,219,115,0" RenderTransformOrigin="0.347,0.579"/>
         <Button Content="registrieren" Name="btnRegisterWindow" HorizontalAlignment="Left" Margin="117,250,0,0" VerticalAlignment="Top" Width="158" Click="BtnRegisterWindow_Click" />
-        <Button Content="Debug" x:Name="btnDebug" HorizontalAlignment="Left" Margin="300,30,0,0" VerticalAlignment="Top" Width="75" Click="BtnDebug_Click"/>
+        <Button Content="Debug" x:Name="btnDebug" HorizontalAlignment="Left" Margin="295,30,0,0" VerticalAlignment="Top" Width="80" Click="BtnDebug_Click" Height="30"/>
+        <Label Content="B Kompetenzen" HorizontalAlignment="Left" Margin="290,4,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
