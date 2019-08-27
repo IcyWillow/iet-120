@@ -1,0 +1,33 @@
+﻿<Window x:Class="M120Projekt.RegistrationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:M120Projekt"
+        mc:Ignorable="d"
+        Title="World of Cara - Registrierung" Height="475" Width="480">
+
+
+    <Grid Width="475" Height="480">
+        <Label Content="Anrede" VerticalAlignment="Top" Margin="125,52,235,0"/>
+
+        <ComboBox Name="SalutationComboBox" IsEditable="False" HorizontalAlignment="Left" ItemsSource="{Binding Salutation}" Margin="125,78,0,0" VerticalAlignment="Top" Width="100" IsReadOnly="True" Height="22">
+            <ComboBoxItem IsSelected="True">Herr</ComboBoxItem>
+            <ComboBoxItem>Frau</ComboBoxItem>
+        </ComboBox>
+        <Label Content="Vorname" VerticalAlignment="Top" Margin="125,100,235,0"/>
+        <TextBox HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="225" Margin="125,126,0,0"/>
+        <Label Content="Nachname" VerticalAlignment="Top" Margin="125,149,235,0"/>
+        <TextBox HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="225" Margin="125,175,0,0"/>
+        <Label Content="Email" VerticalAlignment="Top" Margin="125,199,235,0"/>
+        <TextBox HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="225" Margin="125,225,0,0"/>
+        <Label Content="Passwort" VerticalAlignment="Top" Margin="125,249,235,0"/>
+        <TextBox HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="225" Margin="125,275,0,0"/>
+        <Label Content="Passwort bestätigen" VerticalAlignment="Top" Margin="125,299,235,0"/>
+        <TextBox HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="225" Margin="125,325,0,0"/>
+        <Button Name="btnRegister" Content="registrieren" HorizontalAlignment="Left" Margin="125,365,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button Name="btnCancel" Content="abbrechen" HorizontalAlignment="Left" Margin="250,365,0,0" VerticalAlignment="Top" Width="100" Click="BtnCancel_Click"/>
+
+    </Grid>
+
+</Window>
