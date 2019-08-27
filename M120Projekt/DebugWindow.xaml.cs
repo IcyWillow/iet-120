@@ -16,8 +16,8 @@ namespace M120Projekt
         public DebugWindow()
         {
             InitializeComponent();
-
-
+            UCDemo uc = new UCDemo();
+            stcButtons.Children.Add(uc);
         }
 
         private void BtnShowDialog_Click(object sender, RoutedEventArgs e)
