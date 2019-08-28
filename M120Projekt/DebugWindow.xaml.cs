@@ -16,8 +16,7 @@ namespace M120Projekt
         public DebugWindow()
         {
             InitializeComponent();
-            UCDemo uc = new UCDemo();
-            stcButtons.Children.Add(uc);
+      
         }
 
         private void BtnShowDialog_Click(object sender, RoutedEventArgs e)
@@ -73,6 +72,12 @@ namespace M120Projekt
             //Properties eines Events entnehmen
             Point point = e.GetPosition(wdnDebug);
             lblMouse.Content = $"x:{Math.Round(point.X, 0)} y:{Math.Round(point.Y, 0)}";
+        }
+
+        private void BtnCreateUserControl_Click(object sender, RoutedEventArgs e)
+        {
+            UCDemo uc = new UCDemo();
+            stcButtons.Children.Add(uc);
         }
     }
 }

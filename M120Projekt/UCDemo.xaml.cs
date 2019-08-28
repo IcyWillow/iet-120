@@ -24,5 +24,26 @@ namespace M120Projekt
         {
             InitializeComponent();
         }
+
+        private void BtnRed_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Roter Knopf");
+        }
+
+        private void BtnYellow_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Gelber Knopf");
+        }
+
+        private void BtnPurple_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Violetter Knopf");
+        }
+
+        private void BtnGreen_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Grüner Knopf");
+        }
+
     }
 }

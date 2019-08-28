@@ -10,7 +10,7 @@ namespace M120Projekt
         public MainWindow()
         {
             InitializeComponent();
-            /*
+            
             //Insert, read and update test data (user)
             APIDemo.DemoUserCreate();
             APIDemo.DemoUserRead();
@@ -30,7 +30,7 @@ namespace M120Projekt
             APIDemo.DemoHighscoreDelete();
             APIDemo.DemoWordDelete();
             APIDemo.DemoUserDelete();
-            */
+            
         }
 
         private void BtnRegisterWindow_Click(object sender, RoutedEventArgs e)

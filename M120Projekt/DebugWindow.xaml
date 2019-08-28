@@ -7,37 +7,43 @@
         mc:Ignorable="d"
         x:Name="wdnDebug"
         MouseMove="WdnDebug_MouseMove"
-        Title="DebugWindow" Height="450" Width="628.333">
+        Title="DebugWindow" Height="550" Width="414">
 
 
 
-  
-    <Grid Height="450" Width="400">
-     
+
+    <Grid Height="550" Width="400">
+
         <Label Content="Property eines Objektes auslesen:" Margin="50,38,145,382"/>
         <Button x:Name="btnShowDialog" Content="Dialog Test" HorizontalAlignment="Left" Margin="190,71,0,0" VerticalAlignment="Top" Width="75" Click="BtnShowDialog_Click"/>
         <TextBox x:Name="txtDialog" HorizontalAlignment="Left" Height="23" Margin="50,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 
 
-        <Grid x:Name="GrdMain"  Width="Auto" Height="Auto">
-   
-                <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="205,205,20,70">
-                <StackPanel x:Name="stcButtons" Margin="215,200,25,35"/>
-                </ScrollViewer>
-            </Grid>
-      
-            <Button x:Name="btnCreateButton" Content="Button erstellen" HorizontalAlignment="Left" Margin="20,275,0,0" VerticalAlignment="Top" Width="120" Click="BtnCreateButton_Click" Height="30"/>
-        <Label Content="Steuerelemente dynamisch erstellen:"  Margin="10,240,185,180"/>
-        <Grid Height="450" Width="400">
-            <Label Content="Property eines Objektes setzen:" Margin="50,110,145,310"/>
+
+
+        <StackPanel x:Name="stcButtons" Margin="215,210,25,35"/>
+
+
+
+
+
+        <Grid Height="550" Width="400">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="7*"/>
+            </Grid.RowDefinitions>
+            <Label Content="Steuerelemente dynamisch erstellen:"  Margin="10,0,185,220" Grid.Row="1"/>
+            <Label x:Name="lblMouse" Content="x: y:" HorizontalAlignment="Left" Margin="270,10,0,0" VerticalAlignment="Top" Width="80"/>
+            <Label Content="Property eines Objektes setzen:" Margin="50,110,180,60"/>
             <TextBox x:Name="txtCopy" HorizontalAlignment="Left" Height="23" Margin="50,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" TextChanged="TxtCopy_TextChanged"/>
             <TextBox x:Name="txtCopyCat" IsReadOnly="true" Text="Ich kopiere den Text links" HorizontalAlignment="Left" Height="23" Margin="200,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-            <Button x:Name="btnDestroyButtons" Content="Buttons vernichten" HorizontalAlignment="Left" Margin="20,310,0,0" VerticalAlignment="Top" Width="120" Height="30" Click="BtnDestroyButtons_Click"/>
-            <Button Content="Zurück" x:Name="btnBack" HorizontalAlignment="Left" Margin="25,390,0,0" VerticalAlignment="Top" Width="75" Click="BtnBack_Click"/>
-           
+            <Button x:Name="btnDestroyButtons" Content="Steuerelemente löschen" HorizontalAlignment="Left" Margin="20,105,0,0" VerticalAlignment="Top" Width="140" Height="30" Click="BtnDestroyButtons_Click" Grid.Row="1"/>
+            <Button Content="Zurück" x:Name="btnBack" HorizontalAlignment="Left" Margin="20,275,0,0" VerticalAlignment="Top" Width="75" Click="BtnBack_Click" Grid.Row="1"/>
+            <Button x:Name="btnCreateButton" Content="Button erstellen" HorizontalAlignment="Left" Margin="20,35,0,0" VerticalAlignment="Top" Width="140" Click="BtnCreateButton_Click" Height="30" Grid.Row="1"/>
+            <Button x:Name="btnCreateUserControl" Content="UC erstellen" HorizontalAlignment="Left" Margin="20,70,0,0" VerticalAlignment="Top" Width="140" Height="30" Grid.Row="1" Click="BtnCreateUserControl_Click"/>
+
         </Grid>
-        <Label x:Name="lblMouse" Content="x: y:" HorizontalAlignment="Left" Margin="270,10,0,0" VerticalAlignment="Top" Width="80"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="530,175,-230,0" VerticalAlignment="Top" Width="100"/>
+
 
     </Grid>
 </Window>
