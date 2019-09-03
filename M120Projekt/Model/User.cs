@@ -34,14 +34,7 @@ namespace M120Projekt.Data
         #endregion
         #region Applikationsschicht
         public User() { }
-        [NotMapped]
-        public string CalculatedAttr
-        {
-            get
-            {
-                return "Im Getter kann Code eingefügt werden für berechnete Attribute";
-            }
-        }
+
         public static List<User> All()
         {
             using (var db = new Context())
@@ -56,6 +49,15 @@ namespace M120Projekt.Data
                 return (from record in db.Users where record.Id == id select record).FirstOrDefault();
             }
         }
+
+        public static User ReadByEmail(string email)
+        {
+            using (var db = new Context())
+            {
+                return (from record in db.Users where record.Email == email.ToLower() select record).FirstOrDefault();
+            }
+        }
+
         public static List<User> WhereEmail(string term)
         {
             using (var db = new Context())
@@ -98,6 +100,12 @@ namespace M120Projekt.Data
                 db.SaveChanges();
             }
         }
+
+        public bool IsPasswordCorrect(string submittedPassword)
+        {
+            return BCrypt.Net.BCrypt.Verify(submittedPassword, Password);
+        }
+
         public override string ToString()
         {
             return Id.ToString(); // Für bessere Coded UI Test Erkennung

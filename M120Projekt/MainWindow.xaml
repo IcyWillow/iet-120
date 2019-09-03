@@ -10,10 +10,10 @@
 
 
         <Label Content="Email" VerticalAlignment="Top" Margin="117,65,145,0"/>
-        <TextBox HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="158" Margin="117,91,0,0"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="158" Margin="117,91,0,0"/>
 
         <Label Content="Passwort" VerticalAlignment="Top" Margin="117,115,126,0" RenderTransformOrigin="0.347,0.579"/>
-        <TextBox Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Margin="117,142,0,0" HorizontalAlignment="Left" Width="158"/>
+        <PasswordBox x:Name="txtPassword" Height="23"  VerticalAlignment="Top" Margin="117,142,0,0" HorizontalAlignment="Left" Width="158"/>
 
         <Button Content="einloggen" Name="btnLogin" HorizontalAlignment="Left" Margin="117,180,0,0" VerticalAlignment="Top" Width="158" Click="BtnLogin_Click" />
 

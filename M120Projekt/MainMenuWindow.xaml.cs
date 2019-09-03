@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using M120Projekt.Data;
 
 namespace M120Projekt
 {
@@ -22,11 +23,28 @@ namespace M120Projekt
         public MainMenuWindow()
         {
             InitializeComponent();
+
+            lblWelcome.Content = $"Willkommen {Session.User.Salutation} {Session.User.Lastname}";
         }
 
         private void BtnClose_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+            this.Owner.Show();
+            Session.End();
+        }
+
+        private void BtnAccount_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnAccountList_Click(object sender, RoutedEventArgs e)
+        {
+            AccountListWindow accountListWindow = new AccountListWindow {Owner = this};
+            Hide();
+            accountListWindow.ShowDialog();
+
         }
     }
 }

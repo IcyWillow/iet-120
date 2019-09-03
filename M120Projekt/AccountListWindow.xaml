@@ -1,0 +1,13 @@
+﻿<Window x:Class="M120Projekt.AccountListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:M120Projekt"
+        mc:Ignorable="d"
+        Title="AccountListWindow" Height="381" Width="623.333">
+    <Grid Margin="0,0,210.333,54.667">
+        <DataGrid x:Name="dtgAccount" Margin="10,23,-10.666,-22.667" AutoGeneratingColumn="DtgAccount_AutoGeneratingColumn" />
+
+    </Grid>
+</Window>

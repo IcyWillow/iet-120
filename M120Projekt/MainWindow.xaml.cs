@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using M120Projekt.Data;
 
 namespace M120Projekt
 {
@@ -7,6 +8,7 @@ namespace M120Projekt
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
@@ -35,27 +37,38 @@ namespace M120Projekt
 
         private void BtnRegisterWindow_Click(object sender, RoutedEventArgs e)
         {
-
-            this.Hide();
-            RegistrationWindow registrationWindow = new RegistrationWindow();
-            registrationWindow.Owner = this;
+            Hide();
+            RegistrationWindow registrationWindow = new RegistrationWindow(null) { Owner = null};
             registrationWindow.ShowDialog();
         }
 
         private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
+            //TODO implement login
+            TryLogin(txtEmail.Text, txtPassword.Password);
+            if (Session.IsAuthenticated())
+            {
+                Hide();
+                MainMenuWindow mainMenuWindow = new MainMenuWindow { Owner = this };
+                mainMenuWindow.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Login fehlgeschlagen. Bitte überprüfen Sie Ihre Eingaben.");
+            }
             
-            this.Hide();
-            MainMenuWindow mainMenuWindow = new MainMenuWindow();
-            mainMenuWindow.Owner = this;
-            mainMenuWindow.ShowDialog();
+        }
+
+        private void TryLogin(string email, string password)
+        {
+            User user = User.ReadByEmail(email);
+            if (user != null && user.IsPasswordCorrect(password)) Session.Start(user);
         }
 
         private void BtnDebug_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
-            DebugWindow debugWindow = new DebugWindow();
-            debugWindow.Owner = this;
+            Hide();
+            DebugWindow debugWindow = new DebugWindow {Owner = null};
             debugWindow.ShowDialog();
         }
     }

@@ -6,7 +6,7 @@ namespace M120Projekt.Data
 {
     public class Context : DbContext
     {
-        public Context() : base("name=M120Connectionstring")
+        public Context() : base("name=M120ConnectionstringDebug")
         {
             this.Configuration.LazyLoadingEnabled = true;
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<Data.Context, Migrations.Configuration>());
