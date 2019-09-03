@@ -22,13 +22,17 @@ namespace M120Projekt
     public partial class AccountListWindow : Window
     {
         public List<User> Users { get; set; }
+        private int _selectedIndex = 0;
 
         public AccountListWindow()
         {
             InitializeComponent();
-            Users = User.All();
+        }
 
-            this.dtgAccount.ItemsSource = Users;
+        private void RefreshList()
+        {
+            Users = User.All();
+            dtgAccount.ItemsSource = Users;
         }
 
         private void DtgAccount_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
@@ -37,6 +41,47 @@ namespace M120Projekt
             {
                 e.Column = null;
             }
+        }
+
+        private void BtnNew_Click(object sender, RoutedEventArgs e)
+        {
+            RegistrationWindow registrationWindow = new RegistrationWindow() {Owner = this};
+            registrationWindow.ShowDialog();
+            RefreshList();
+        }
+
+        private void BtnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            RegistrationWindow registrationWindow = new RegistrationWindow(Users[_selectedIndex]) { Owner = this };
+            registrationWindow.ShowDialog();
+            RefreshList();
+        }
+
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Element wirklich löschen?", "Löschen", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                Users[_selectedIndex].Delete();
+            }
+
+            RefreshList();
+        }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            Owner.Show();
+            Close();
+        }
+
+        private void DtgAccount_CurrentCellChanged(object sender, EventArgs e)
+        {
+           _selectedIndex = dtgAccount.SelectedIndex;
+        }
+
+        private void Window_Activated(object sender, EventArgs e)
+        {
+            RefreshList();
         }
     }
 }

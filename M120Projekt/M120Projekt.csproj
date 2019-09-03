@@ -86,6 +86,7 @@
     <Compile Include="ScoreWindow.xaml.cs">
       <DependentUpon>ScoreWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="StateMachine.cs" />
     <Compile Include="UCDemo.xaml.cs">
       <DependentUpon>UCDemo.xaml</DependentUpon>
     </Compile>

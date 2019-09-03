@@ -5,9 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:M120Projekt"
         mc:Ignorable="d"
-        Title="AccountListWindow" Height="381" Width="623.333">
-    <Grid Margin="0,0,210.333,54.667">
-        <DataGrid x:Name="dtgAccount" Margin="10,23,-10.666,-22.667" AutoGeneratingColumn="DtgAccount_AutoGeneratingColumn" />
+        Title="AccountListWindow" Height="240" Width="385" Activated="Window_Activated">
+    <Grid Height="240" Width="385">
+        <DataGrid x:Name="dtgAccount" Margin="10,23,120,0" IsReadOnly="True" AutoGeneratingColumn="DtgAccount_AutoGeneratingColumn" Height="167" VerticalAlignment="Top" CurrentCellChanged="DtgAccount_CurrentCellChanged" />
+        <Button x:Name="btnNew" Content="erstellen" HorizontalAlignment="Left" Margin="285,23,0,0" VerticalAlignment="Top" Width="75" Click="BtnNew_Click"/>
+        <Button x:Name="btnUpdate" Content="ändern" HorizontalAlignment="Left" Margin="285,55,0,0" VerticalAlignment="Top" Width="75" Click="BtnUpdate_Click"/>
+        <Button x:Name="btnDelete" Content="löschen" HorizontalAlignment="Left" Margin="285,90,0,0" VerticalAlignment="Top" Width="75" Click="BtnDelete_Click"/>
+        <Button x:Name="btnBack" Content="zurück" HorizontalAlignment="Left" Margin="285,170,0,0" VerticalAlignment="Top" Width="75" Click="BtnBack_Click"/>
+
 
     </Grid>
 </Window>

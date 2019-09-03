@@ -36,7 +36,8 @@ namespace M120Projekt
 
         private void BtnAccount_Click(object sender, RoutedEventArgs e)
         {
-
+            RegistrationWindow registrationWindow = new RegistrationWindow(Session.User, true) {Owner = this};
+            registrationWindow.ShowDialog();
         }
 
         private void BtnAccountList_Click(object sender, RoutedEventArgs e)

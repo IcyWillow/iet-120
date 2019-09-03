@@ -38,7 +38,7 @@ namespace M120Projekt
         private void BtnRegisterWindow_Click(object sender, RoutedEventArgs e)
         {
             Hide();
-            RegistrationWindow registrationWindow = new RegistrationWindow(null) { Owner = null};
+            RegistrationWindow registrationWindow = new RegistrationWindow() { Owner = this};
             registrationWindow.ShowDialog();
         }
 
@@ -68,7 +68,7 @@ namespace M120Projekt
         private void BtnDebug_Click(object sender, RoutedEventArgs e)
         {
             Hide();
-            DebugWindow debugWindow = new DebugWindow {Owner = null};
+            DebugWindow debugWindow = new DebugWindow {Owner = this};
             debugWindow.ShowDialog();
         }
     }

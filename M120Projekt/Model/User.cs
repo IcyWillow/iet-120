@@ -31,6 +31,8 @@ namespace M120Projekt.Data
         public string Password { get; set; }
         [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}")]
         public DateTime CreatedAt { get; set; }
+        [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}")]
+        public DateTime UpdatedAt { get; set; }
         #endregion
         #region Applikationsschicht
         public User() { }
@@ -75,9 +77,11 @@ namespace M120Projekt.Data
         public int Create()
         {
             if (string.IsNullOrEmpty(Email)) Email = "leer@hotmail.com";
-            this.CreatedAt = DateTime.Now;
+        
             using (var db = new Context())
             {
+                this.CreatedAt = DateTime.Now;
+                this.UpdatedAt = DateTime.Now;
                 db.Users.Add(this);
                 db.SaveChanges();
                 return Id;
@@ -87,6 +91,7 @@ namespace M120Projekt.Data
         {
             using (var db = new Context())
             {
+                this.UpdatedAt = DateTime.Now;
                 db.Entry(this).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
                 return Id;
