@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -19,7 +20,7 @@ namespace M120Projekt.Helper
             if (sender != null)
             {
                 ((Control)sender).Background = !string.IsNullOrEmpty(label.Content.ToString())
-                    ? new SolidColorBrush(Colors.IndianRed) : new SolidColorBrush(Colors.White);
+                    ? new SolidColorBrush(Colors.IndianRed) : new SolidColorBrush(Colors.LightGreen);
             }
         }
 
@@ -32,6 +33,23 @@ namespace M120Projekt.Helper
             }
 
             return true;
+        }
+
+        public static void HideErrorLabels(UIElementCollection childrenCollection)
+        {
+            foreach (Control c in childrenCollection)
+            {
+                if (c.GetType() == typeof(Label))
+                {
+                    if (c.Tag != null && c.Tag.Equals("error")) c.Visibility = Visibility.Hidden;
+                }
+            }
+        }
+
+        public static void BlinkForm(Control control, int interval)
+        {
+            int round = interval % 2;
+            control.Background = round == 0 ? new SolidColorBrush(Colors.IndianRed) : new SolidColorBrush(Colors.White);
         }
     }
 }

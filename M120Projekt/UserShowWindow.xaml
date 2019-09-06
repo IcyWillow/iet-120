@@ -4,25 +4,26 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:M120Projekt"
+        WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
-        Title="UserShowWindow" Height="450" Width="800">
-    <Grid Margin="0,0,0.333,-115.333">
-        <Label Content="Vorname" VerticalAlignment="Top" Margin="75,92,653,0"/>
-        <TextBox x:Name="txtFirstname" HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="170" Margin="200,87,0,0"/>
-        <Label Content="Nachname" VerticalAlignment="Top" Margin="75,148,618,0"/>
-        <TextBox x:Name="txtLastname" HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="170" Margin="200,151,0,0"/>
-        <Label Content="Email" VerticalAlignment="Top" Margin="75,190,668,0"/>
-        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="170" Margin="200,190,0,0"/>
-        <Label Content="Erstellt am:" VerticalAlignment="Top" Margin="75,234,633,0"/>
-        <TextBox x:Name="txtCreatedAt" HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="170" Margin="200,237,0,0"/>
-        <Label Content="Aktualisiert an:" VerticalAlignment="Top" Margin="75,279,618,0"/>
-        <TextBox x:Name="txtUpdatedAt" IsReadOnly="True" HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="170" Margin="200,282,0,0"/>
-        <Label Content="Anrede" VerticalAlignment="Top" Margin="75,56,663,0"/>
-        <TextBox x:Name="txtAnrede" IsReadOnly="True"  HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="170" Margin="200,59,0,0"/>
-        <Label Content="Id" VerticalAlignment="Top" Margin="75,30,662,0"/>
-        <TextBox x:Name="txtId" IsReadOnly="True"  HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="170" Margin="200,33,0,0"/>
-        <Button x:Name="btnUpdate" Content="Ändern" HorizontalAlignment="Left" Margin="75,360,0,0" VerticalAlignment="Top" Width="85" Height="35" Click="BtnUpdate_Click"/>
-        <Button x:Name="btnDelete" Content="Löschen" HorizontalAlignment="Left" Margin="180,360,0,0" VerticalAlignment="Top" Width="85" Height="35" Click="BtnDelete_Click"/>
-        <Button x:Name="btnCancel" Content="Zurück" HorizontalAlignment="Left" Margin="285,360,0,0" VerticalAlignment="Top" Width="85" Height="35" Click="BtnCancel_Click"/>
+        Title="World of Cara - Benutzer Detailansicht" Height="350" Width="400" Icon="pack://siteoforigin:,,,/Resources/object_leaf.ico">
+    <Grid Height="350" Width="400">
+        <Label Content="Vorname" Height="23" VerticalAlignment="Top" Margin="50,94,265,0"/>
+        <TextBox x:Name="txtFirstname" IsReadOnly="True" HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="170" Margin="165,94,0,0"/>
+        <Label Content="Nachname" Height="23" VerticalAlignment="Top" Margin="50,120,265,0"/>
+        <TextBox x:Name="txtLastname" IsReadOnly="True" HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="170" Margin="165,123,0,0"/>
+        <Label Content="Email" Height="23" VerticalAlignment="Top" Margin="50,151,265,0"/>
+        <TextBox x:Name="txtEmail" IsReadOnly="True" HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="170" Margin="165,151,0,0"/>
+        <Label Content="Erstellt am:" Height="23" VerticalAlignment="Top" Margin="50,179,265,0"/>
+        <TextBox x:Name="txtCreatedAt" IsReadOnly="True" HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="170" Margin="165,179,0,0"/>
+        <Label Content="Aktualisiert an:" Height="23" VerticalAlignment="Top" Margin="50,207,0,0" HorizontalAlignment="Left" Width="90"/>
+        <TextBox x:Name="txtUpdatedAt" IsReadOnly="True" HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="170" Margin="165,207,0,0"/>
+        <Label Content="Anrede" VerticalAlignment="Top" Height="23" Margin="50,66,280,0"/>
+        <TextBox x:Name="txtAnrede" IsReadOnly="True"  HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="170" Margin="165,66,0,0"/>
+        <Label Content="Id" VerticalAlignment="Top" Height="23" Margin="50,35,280,0"/>
+        <TextBox x:Name="txtId" IsReadOnly="True"  HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="170" Margin="165,35,0,0"/>
+        <Button x:Name="btnUpdate" Content="Ändern" HorizontalAlignment="Left" Margin="50,260,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="BtnUpdate_Click"/>
+        <Button x:Name="btnDelete" Content="Löschen" Margin="155,260,170,0" VerticalAlignment="Top" Height="25" Click="BtnDelete_Click"/>
+        <Button x:Name="btnCancel" Content="Zurück" HorizontalAlignment="Left" Margin="260,260,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="BtnCancel_Click"/>
     </Grid>
 </Window>

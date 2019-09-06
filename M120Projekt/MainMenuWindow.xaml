@@ -4,8 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:M120Projekt"
+        WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
-        Title="MainMenuWindow" Height="490" Width="640">
+        Title="World of Cara - Hauptmenü" Height="490" Width="640" Icon="pack://siteoforigin:,,,/Resources/object_leaf.ico">
     <Grid Height="490" Width="640">
         <Label Content="World of Cara" HorizontalAlignment="Left" Margin="167,52,0,0" VerticalAlignment="Top" FontSize="48"/>
         <Label x:Name="lblWelcome" Content="Willkommen User.Salutation User.Name" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="210,150,209,0" VerticalAlignment="Top"/>
@@ -22,7 +23,7 @@
             <Button Content="beenden" x:Name="btnClose" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="55" FontSize="20" Click="BtnClose_Click"/>
         </StackPanel>
         <Button x:Name="btnAccount" Content="Mein Account" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="30,29,0,0" Height="35" Click="BtnAccount_Click"/>
-        <Button x:Name="btnAccountList" Content="CRUD Test" HorizontalAlignment="Left" Margin="30,81,0,0" VerticalAlignment="Top" Width="100" Height="34" Click="BtnAccountList_Click"/>
+        <Button x:Name="btnAccountList" Content="CRUD Test (C)" HorizontalAlignment="Left" Margin="30,81,0,0" VerticalAlignment="Top" Width="100" Height="34" Click="BtnAccountList_Click"/>
     </Grid>
 
 </Window>

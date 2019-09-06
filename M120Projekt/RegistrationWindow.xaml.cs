@@ -1,15 +1,8 @@
-﻿using System;
-using System.Drawing;
-using System.Reflection;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Forms;
-using System.Windows.Media;
 using M120Projekt.Data;
 using M120Projekt.Helper;
-using Control = System.Windows.Controls.Control;
-using Label = System.Windows.Controls.Label;
 using MessageBox = System.Windows.MessageBox;
 
 namespace M120Projekt
@@ -20,26 +13,20 @@ namespace M120Projekt
     public partial class RegistrationWindow : Window
     {
         private MachineState State = MachineState.Create;
-        private bool IsOwnAccount = false;
-        private User User;
+        private bool _isOwnAccount;
+        private readonly User User;
 
         public RegistrationWindow(User user = null, bool isOwnAccount = false)
         {
             InitializeComponent();
-
-            foreach (Control c in grdRegister.Children)
-            {
-                if (c.GetType() == typeof(Label))
-                {
-                    if (c.Tag != null && c.Tag.Equals("error")) c.Visibility = Visibility.Hidden;
-                }
-            }
+            
+            ValidationHelper.HideErrorLabels(grdRegister.Children);
 
             if (user != null)
             {
                 //Change state for update
                 State = MachineState.Update;
-                IsOwnAccount = isOwnAccount;
+                _isOwnAccount = isOwnAccount;
                 User = user;
                 cbxSalutation.Text = user.Salutation;
                 txtEmail.Text = user.Email;
@@ -49,6 +36,8 @@ namespace M120Projekt
                 Title = "World of Cara - User ändern";
                 btnRegister.Content = "ändern";
             }
+
+            if (State == MachineState.Create) btnRegister.IsEnabled = false;
         }
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
@@ -75,7 +64,7 @@ namespace M120Projekt
                         break;
                     case (MachineState.Update):
                         user.Update();
-                        if (IsOwnAccount) Session.Start(user);
+                        if (_isOwnAccount) Session.Start(user);
                         MessageBox.Show("User verändert.");
                         break;
                 }
@@ -90,9 +79,6 @@ namespace M120Projekt
             TxtLastname_LostFocus(txtLastname, null);
             TxtEmail_LostFocus(txtEmail, null);
 
-            bool a = !string.IsNullOrEmpty(txtPassword.Password);
-            bool b = !string.IsNullOrEmpty(txtPasswordConfirmation.Password);
-            bool c = State != MachineState.Update;
             if (string.IsNullOrEmpty(txtPassword.Password) &&
                 string.IsNullOrEmpty(txtPasswordConfirmation.Password) &&
                 State != MachineState.Update)
@@ -108,7 +94,7 @@ namespace M120Projekt
         {
             string error = "";
             if (txtFirstname.Text.Length < 3) error = "Vorname muss mindestens 3 Zeichen beinhalten.";
-            if (string.IsNullOrEmpty(txtFirstname.Text)) error = "Bitte geben Sie einen gültigen Namen ein.";
+            if (string.IsNullOrEmpty(txtFirstname.Text)) error = "Bitte geben Sie einen gültigen Vornamen ein.";
             ValidationHelper.ShowErrors(lblErrorFirstname, error, sender);
         }
 
@@ -116,7 +102,7 @@ namespace M120Projekt
         {
             string error = "";
             if (txtLastname.Text.Length < 3) error = "Nachname muss mindestens 3 Zeichen beinhalten.";
-            if (string.IsNullOrEmpty(txtFirstname.Text)) error = "Bitte geben Sie einen gültigen Namen ein.";
+            if (string.IsNullOrEmpty(txtLastname.Text)) error = "Bitte geben Sie einen gültigen Nachnamen ein.";
             ValidationHelper.ShowErrors(lblErrorLastname, error, sender);
         }
 
@@ -147,6 +133,14 @@ namespace M120Projekt
             ValidationHelper.ShowErrors(lblErrorPasswordConfirmation, error, sender);
         }
 
-     
+        private void RegisterForm_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            btnRegister.IsEnabled = true;
+        }
+
+        private void RegisterForm_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            btnRegister.IsEnabled = true;
+        }
     }
 }
