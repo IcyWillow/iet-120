@@ -34,10 +34,14 @@ namespace M120Projekt
 
         private void DtgAccount_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
         {
-            if (e.PropertyName == "Password")
+            if (e.PropertyName == "Password" || e.PropertyName == "CreatedAt" || e.PropertyName == "UpdatedAt" || e.PropertyName == "Id")
             {
                 e.Column = null;
             }
+
+            if (e.PropertyName == "Firstname") e.Column.Header = "Vorname";
+            if (e.PropertyName == "Lastname") e.Column.Header = "Nachname";
+            if (e.PropertyName == "Salutation") e.Column.Header = "Anrede";
         }
 
         private void BtnNew_Click(object sender, RoutedEventArgs e)
@@ -77,6 +81,7 @@ namespace M120Projekt
         {
             btnUpdate.IsEnabled = true;
             btnDelete.IsEnabled = true;
+            btnShow.IsEnabled = true;
             _selectedIndex = dtgAccount.SelectedIndex;
         }
 
@@ -84,6 +89,7 @@ namespace M120Projekt
         {
             btnUpdate.IsEnabled = false;
             btnDelete.IsEnabled = false;
+            btnShow.IsEnabled = false;
         }
 
         private void BtnSearch_Click(object sender, RoutedEventArgs e)
@@ -97,6 +103,13 @@ namespace M120Projekt
             Users.Clear();
             Users = string.IsNullOrEmpty(query) ? User.All() : User.LikeEmail(query);
             dtgAccount.ItemsSource = Users;
+        }
+
+        private void BtnShow_Click(object sender, RoutedEventArgs e)
+        {
+            UserShowWindow userShowWindow = new UserShowWindow(Users[_selectedIndex].Id) { Owner = this };
+            userShowWindow.ShowDialog();
+            ListUsers();
         }
     }
 

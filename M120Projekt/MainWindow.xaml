@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:M120Projekt"
         mc:Ignorable="d"
-        Title="Login - World of Cara" Height="351" Width="400">
+        Title="Login - World of Cara" Height="351" Width="400" Icon="pack://siteoforigin:,,,/Resources/object_leaf.ico">
     <Grid Width="400" Height="351">
 
 
