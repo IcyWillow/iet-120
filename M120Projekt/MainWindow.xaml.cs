@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using M120Projekt.Data;
+using M120Projekt.Helper;
 
 namespace M120Projekt
 {
@@ -44,7 +45,6 @@ namespace M120Projekt
 
         private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
-            //TODO implement login
             TryLogin(txtEmail.Text, txtPassword.Password);
             if (Session.IsAuthenticated())
             {
@@ -54,7 +54,7 @@ namespace M120Projekt
             }
             else
             {
-                MessageBox.Show("Login fehlgeschlagen. Bitte überprüfen Sie Ihre Eingaben.");
+                ValidationHelper.ShowErrors(lblErrorLogin, "Kombination nicht gefunden.");
             }
             
         }

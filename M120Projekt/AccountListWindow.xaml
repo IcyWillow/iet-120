@@ -5,14 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:M120Projekt"
         mc:Ignorable="d"
-        Title="AccountListWindow" Height="240" Width="385" Activated="Window_Activated">
-    <Grid Height="240" Width="385">
-        <DataGrid x:Name="dtgAccount" Margin="10,23,120,0" IsReadOnly="True" AutoGeneratingColumn="DtgAccount_AutoGeneratingColumn" Height="167" VerticalAlignment="Top" CurrentCellChanged="DtgAccount_CurrentCellChanged" />
-        <Button x:Name="btnNew" Content="erstellen" HorizontalAlignment="Left" Margin="285,23,0,0" VerticalAlignment="Top" Width="75" Click="BtnNew_Click"/>
-        <Button x:Name="btnUpdate" Content="ändern" HorizontalAlignment="Left" Margin="285,55,0,0" VerticalAlignment="Top" Width="75" Click="BtnUpdate_Click"/>
-        <Button x:Name="btnDelete" Content="löschen" HorizontalAlignment="Left" Margin="285,90,0,0" VerticalAlignment="Top" Width="75" Click="BtnDelete_Click"/>
-        <Button x:Name="btnBack" Content="zurück" HorizontalAlignment="Left" Margin="285,170,0,0" VerticalAlignment="Top" Width="75" Click="BtnBack_Click"/>
+        Title="AccountListWindow" Height="381" Width="623.167">
+    <Grid>
+        <DataGrid x:Name="dtgAccount" Margin="15,68,137.667,0" IsReadOnly="True" AutoGeneratingColumn="DtgAccount_AutoGeneratingColumn" Height="252" VerticalAlignment="Top" CurrentCellChanged="DtgAccount_CurrentCellChanged" />
+        <Button x:Name="btnNew" Content="erstellen" HorizontalAlignment="Left" Margin="515,68,0,0" VerticalAlignment="Top" Width="75" Click="BtnNew_Click"/>
+        <Button x:Name="btnUpdate" Content="ändern" HorizontalAlignment="Left" Margin="515,100,0,0" VerticalAlignment="Top" Width="75" Click="BtnUpdate_Click" IsEnabled="False"/>
+        <Button x:Name="btnDelete" Content="löschen" HorizontalAlignment="Left" Margin="515,135,0,0" VerticalAlignment="Top" Width="75" Click="BtnDelete_Click" IsEnabled="False"/>
+        <Button x:Name="btnBack" Content="zurück" HorizontalAlignment="Left" Margin="515,300,0,0" VerticalAlignment="Top" Width="75" Click="BtnBack_Click"/>
+        <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Height="22" Margin="15,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135"/>
 
+        <Button x:Name="btnSearch" Margin="160,13,416.667,302" Click="BtnSearch_Click" Cursor="Hand" ToolTip="Nach E-Mail suchen">
+            <Button.Background>
+                <ImageBrush ImageSource="Resources/search.png"/>
+            </Button.Background>
+        </Button>
+        <Label Content="Nach Email suchen" HorizontalAlignment="Left" Margin="15,2,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

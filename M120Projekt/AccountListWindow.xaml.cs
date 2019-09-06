@@ -27,13 +27,10 @@ namespace M120Projekt
         public AccountListWindow()
         {
             InitializeComponent();
+            Users = new List<User>();
+            ListUsers();
         }
 
-        private void RefreshList()
-        {
-            Users = User.All();
-            dtgAccount.ItemsSource = Users;
-        }
 
         private void DtgAccount_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
         {
@@ -47,14 +44,14 @@ namespace M120Projekt
         {
             RegistrationWindow registrationWindow = new RegistrationWindow() {Owner = this};
             registrationWindow.ShowDialog();
-            RefreshList();
+            ListUsers();
         }
 
         private void BtnUpdate_Click(object sender, RoutedEventArgs e)
         {
             RegistrationWindow registrationWindow = new RegistrationWindow(Users[_selectedIndex]) { Owner = this };
             registrationWindow.ShowDialog();
-            RefreshList();
+            ListUsers();
         }
 
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
@@ -63,9 +60,11 @@ namespace M120Projekt
             if (result == MessageBoxResult.Yes)
             {
                 Users[_selectedIndex].Delete();
+                Users.Remove(Users[_selectedIndex]);
+                DisableButtons();
             }
 
-            RefreshList();
+            ListUsers();
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
@@ -76,12 +75,36 @@ namespace M120Projekt
 
         private void DtgAccount_CurrentCellChanged(object sender, EventArgs e)
         {
-           _selectedIndex = dtgAccount.SelectedIndex;
+            btnUpdate.IsEnabled = true;
+            btnDelete.IsEnabled = true;
+            _selectedIndex = dtgAccount.SelectedIndex;
         }
 
-        private void Window_Activated(object sender, EventArgs e)
+        private void DisableButtons()
         {
-            RefreshList();
+            btnUpdate.IsEnabled = false;
+            btnDelete.IsEnabled = false;
         }
+
+        private void BtnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            ListUsers(txtSearch.Text);
+        }
+
+        private void ListUsers(string query = null)
+        {
+            DisableButtons();
+            Users.Clear();
+            Users = string.IsNullOrEmpty(query) ? User.All() : User.LikeEmail(query);
+            dtgAccount.ItemsSource = Users;
+        }
+    }
+
+    public enum Action
+    {
+        Show = 0,
+        Create = 1,
+        Update = 2,
+        Delete = 3
     }
 }

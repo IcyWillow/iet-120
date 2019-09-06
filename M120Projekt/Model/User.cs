@@ -60,6 +60,15 @@ namespace M120Projekt.Data
             }
         }
 
+        public static bool DoesEmailExist(string email)
+        {
+            using (var db = new Context())
+            {
+                User user = (from record in db.Users where record.Email == email.ToLower() select record).FirstOrDefault();
+                return user != null;
+            }
+        }
+
         public static List<User> WhereEmail(string term)
         {
             using (var db = new Context())
@@ -80,6 +89,7 @@ namespace M120Projekt.Data
         
             using (var db = new Context())
             {
+                this.Email = Email.ToLower();
                 this.CreatedAt = DateTime.Now;
                 this.UpdatedAt = DateTime.Now;
                 db.Users.Add(this);
