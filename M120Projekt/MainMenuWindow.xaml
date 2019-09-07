@@ -22,8 +22,7 @@
             <Button Content="Highscores" x:Name="btnHighscores" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="55" FontSize="20"/>
             <Button Content="beenden" x:Name="btnClose" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="55" FontSize="20" Click="BtnClose_Click"/>
         </StackPanel>
-        <Button x:Name="btnAccount" Content="Mein Account" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="30,29,0,0" Height="35" Click="BtnAccount_Click"/>
-        <Button x:Name="btnAccountList" Content="CRUD Test (C)" HorizontalAlignment="Left" Margin="30,81,0,0" VerticalAlignment="Top" Width="100" Height="34" Click="BtnAccountList_Click"/>
+        <Button x:Name="btnAccountList" Content="CRUD Test (C)" HorizontalAlignment="Left" Margin="30,30,0,0" VerticalAlignment="Top" Width="100" Height="34" Click="BtnAccountList_Click"/>
     </Grid>
 
 </Window>

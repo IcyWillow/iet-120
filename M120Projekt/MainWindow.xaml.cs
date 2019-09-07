@@ -47,7 +47,6 @@ namespace M120Projekt
 
         private void BtnRegisterWindow_Click(object sender, RoutedEventArgs e)
         {
-            Hide();
             RegistrationWindow registrationWindow = new RegistrationWindow() { Owner = this};
             registrationWindow.ShowDialog();
         }

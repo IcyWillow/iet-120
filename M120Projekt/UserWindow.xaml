@@ -1,0 +1,21 @@
+﻿<Window x:Class="M120Projekt.UserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:M120Projekt"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        Title="World of Cara - Benutzer Detailansicht" Height="450" Width="400" Icon="pack://siteoforigin:,,,/Resources/object_leaf.ico">
+    <Grid Width="400" Height="450">
+        <Grid x:Name="grdElement">
+
+        </Grid>
+        <Button x:Name="btnShow" Content="zeigen" HorizontalAlignment="Left" Height="31" Margin="25,374,0,0" VerticalAlignment="Top" Width="75" Click="BtnShow_Click"/>
+        <Button x:Name="btnUpdate" Content="ändern" HorizontalAlignment="Left" Height="31" Margin="115,374,0,0" VerticalAlignment="Top" Width="75" Click="BtnUpdate_Click"/>
+        <Button x:Name="btnDelete" Content="löschen" HorizontalAlignment="Left" Height="31" Margin="205,374,0,0" VerticalAlignment="Top" Width="75" Click="BtnDelete_Click"/>
+        <Button x:Name="btnCancel" Content="abbrechen" HorizontalAlignment="Left" Height="31" Margin="295,374,0,0" VerticalAlignment="Top" Width="75" Click="BtnCancel_Click"/>
+    </Grid>
+
+
+</Window>

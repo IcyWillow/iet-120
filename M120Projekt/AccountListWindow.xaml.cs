@@ -51,12 +51,6 @@ namespace M120Projekt
             ListUsers();
         }
 
-        private void BtnUpdate_Click(object sender, RoutedEventArgs e)
-        {
-            RegistrationWindow registrationWindow = new RegistrationWindow(Users[_selectedIndex]) { Owner = this };
-            registrationWindow.ShowDialog();
-            ListUsers();
-        }
 
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
@@ -79,7 +73,6 @@ namespace M120Projekt
 
         private void DtgAccount_CurrentCellChanged(object sender, EventArgs e)
         {
-            btnUpdate.IsEnabled = true;
             btnDelete.IsEnabled = true;
             btnShow.IsEnabled = true;
             _selectedIndex = dtgAccount.SelectedIndex;
@@ -87,7 +80,6 @@ namespace M120Projekt
 
         private void DisableButtons()
         {
-            btnUpdate.IsEnabled = false;
             btnDelete.IsEnabled = false;
             btnShow.IsEnabled = false;
         }
@@ -107,17 +99,10 @@ namespace M120Projekt
 
         private void BtnShow_Click(object sender, RoutedEventArgs e)
         {
-            UserShowWindow userShowWindow = new UserShowWindow(Users[_selectedIndex].Id) { Owner = this };
+            UserWindow userShowWindow = new UserWindow(Users[_selectedIndex].Id) { Owner = this };
             userShowWindow.ShowDialog();
             ListUsers();
         }
     }
 
-    public enum Action
-    {
-        Show = 0,
-        Create = 1,
-        Update = 2,
-        Delete = 3
-    }
 }

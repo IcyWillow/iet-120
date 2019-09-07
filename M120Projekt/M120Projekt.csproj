@@ -94,8 +94,14 @@
     <Compile Include="RegistrationWindow.xaml.cs">
       <DependentUpon>RegistrationWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserShowWindow.xaml.cs">
-      <DependentUpon>UserShowWindow.xaml</DependentUpon>
+    <Compile Include="UserShow.xaml.cs">
+      <DependentUpon>UserShow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserUpdate.xaml.cs">
+      <DependentUpon>UserUpdate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserWindow.xaml.cs">
+      <DependentUpon>UserWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="AccountListWindow.xaml">
       <SubType>Designer</SubType>
@@ -145,7 +151,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserShowWindow.xaml">
+    <Page Include="UserShow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserUpdate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

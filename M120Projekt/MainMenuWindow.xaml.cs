@@ -34,12 +34,6 @@ namespace M120Projekt
             Session.End();
         }
 
-        private void BtnAccount_Click(object sender, RoutedEventArgs e)
-        {
-            RegistrationWindow registrationWindow = new RegistrationWindow(Session.User, true) {Owner = this};
-            registrationWindow.ShowDialog();
-        }
-
         private void BtnAccountList_Click(object sender, RoutedEventArgs e)
         {
             AccountListWindow accountListWindow = new AccountListWindow {Owner = this};

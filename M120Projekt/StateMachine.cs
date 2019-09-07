@@ -8,7 +8,9 @@ namespace M120Projekt
 {
     public enum MachineState
     {
+        Read = 0,
         Create = 1,
-        Update = 2
+        Update = 2,
+        Changed = 3
     }
 }
