@@ -48,7 +48,7 @@ namespace M120Projekt
         {
             RegistrationWindow registrationWindow = new RegistrationWindow() {Owner = this};
             registrationWindow.ShowDialog();
-            ListUsers();
+            ListUsers(txtSearch.Text);
         }
 
 
@@ -62,7 +62,7 @@ namespace M120Projekt
                 DisableButtons();
             }
 
-            ListUsers();
+            ListUsers(txtSearch.Text);
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
@@ -96,7 +96,7 @@ namespace M120Projekt
         {
             UserWindow userShowWindow = new UserWindow(Users[_selectedIndex].Id) { Owner = this };
             userShowWindow.ShowDialog();
-            ListUsers();
+            ListUsers(txtSearch.Text);
         }
 
         private void TxtSearch_TextChanged(object sender, TextChangedEventArgs e)

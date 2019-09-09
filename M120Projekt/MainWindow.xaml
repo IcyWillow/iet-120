@@ -16,11 +16,11 @@
         <Label Content="Passwort" VerticalAlignment="Top" Margin="117,115,126,0" RenderTransformOrigin="0.347,0.579"/>
         <PasswordBox x:Name="txtPassword" Height="23"  VerticalAlignment="Top" Margin="117,142,0,0" HorizontalAlignment="Left" Width="158"/>
 
-        <Button Content="einloggen" Name="btnLogin" HorizontalAlignment="Left" Margin="117,190,0,0" VerticalAlignment="Top" Width="158" Click="BtnLogin_Click" />
+        <Button Content="Einloggen" Name="btnLogin" HorizontalAlignment="Left" Margin="117,190,0,0" VerticalAlignment="Top" Width="158" Click="BtnLogin_Click" />
         <Label x:Name="lblErrorLogin" Tag="error" HorizontalAlignment="Left" Margin="117,165,0,0" VerticalAlignment="Top" Foreground="Red" Width="158" FontSize="9" RenderTransformOrigin="0.51,2.789"  Height="20">
         </Label>
             <Label Content="Kein Account?" VerticalAlignment="Top" Margin="117,239,115,0" RenderTransformOrigin="0.347,0.579"/>
-        <Button Content="registrieren" Name="btnRegisterWindow" HorizontalAlignment="Left" Margin="117,270,0,0" VerticalAlignment="Top" Width="158" Click="BtnRegisterWindow_Click" />
+        <Button Content="Registrieren" Name="btnRegisterWindow" HorizontalAlignment="Left" Margin="117,270,0,0" VerticalAlignment="Top" Width="158" Click="BtnRegisterWindow_Click" />
         <Button Content="Debug" x:Name="btnDebug" HorizontalAlignment="Left" Margin="295,30,0,0" VerticalAlignment="Top" Width="80" Click="BtnDebug_Click" Height="30"/>
         <Label Content="B Kompetenzen" HorizontalAlignment="Left" Margin="290,4,0,0" VerticalAlignment="Top"/>
     </Grid>

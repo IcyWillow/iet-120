@@ -11,10 +11,10 @@
         <Grid x:Name="grdElement">
 
         </Grid>
-        <Button x:Name="btnShow" Content="zeigen" HorizontalAlignment="Left" Height="31" Margin="25,374,0,0" VerticalAlignment="Top" Width="75" Click="BtnShow_Click"/>
-        <Button x:Name="btnUpdate" Content="ändern" HorizontalAlignment="Left" Height="31" Margin="115,374,0,0" VerticalAlignment="Top" Width="75" Click="BtnUpdate_Click"/>
-        <Button x:Name="btnDelete" Content="löschen" HorizontalAlignment="Left" Height="31" Margin="205,374,0,0" VerticalAlignment="Top" Width="75" Click="BtnDelete_Click"/>
-        <Button x:Name="btnCancel" Content="abbrechen" HorizontalAlignment="Left" Height="31" Margin="295,374,0,0" VerticalAlignment="Top" Width="75" Click="BtnCancel_Click"/>
+        <Button x:Name="btnShow" Content="Zeigen" HorizontalAlignment="Left" Height="31" Margin="25,374,0,0" VerticalAlignment="Top" Width="75" Click="BtnShow_Click"/>
+        <Button x:Name="btnUpdate" Content="Ändern" HorizontalAlignment="Left" Height="31" Margin="115,374,0,0" VerticalAlignment="Top" Width="75" Click="BtnUpdate_Click"/>
+        <Button x:Name="btnDelete" Content="Löschen" HorizontalAlignment="Left" Height="31" Margin="205,374,0,0" VerticalAlignment="Top" Width="75" Click="BtnDelete_Click"/>
+        <Button x:Name="btnCancel" Content="Abbrechen" HorizontalAlignment="Left" Height="31" Margin="295,374,0,0" VerticalAlignment="Top" Width="75" Click="BtnCancel_Click"/>
     </Grid>
 
 

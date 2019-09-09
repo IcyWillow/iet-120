@@ -31,7 +31,7 @@
         <Label x:Name="lblErrorEmail" Content="Label" Tag="error" HorizontalAlignment="Left" Margin="195,165,0,0" VerticalAlignment="Top" Foreground="Red" Width="215" FontSize="9" RenderTransformOrigin="0.51,2.789"  Height="22"/>
         <Label x:Name="lblErrorPassword" Content="Label" Tag="error" HorizontalAlignment="Left" Margin="195,214,0,0" VerticalAlignment="Top" Foreground="Red" Width="215" FontSize="9" RenderTransformOrigin="0.51,2.789"  Height="22"/>
         <Label x:Name="lblErrorPasswordConfirmation" Content="Label" Tag="error" HorizontalAlignment="Left" Margin="195,263,0,0" VerticalAlignment="Top" Foreground="Red" FontSize="9" Width="215" RenderTransformOrigin="0.51,2.789"  Height="22"/>
-        <Button x:Name="btnClose" Content="abbrechen" HorizontalAlignment="Left" Margin="130,300,0,0" VerticalAlignment="Top" Width="65" Height="25" Click="BtnClose_Click"/>
+        <Button x:Name="btnClose" Content="Abbrechen" HorizontalAlignment="Left" Margin="130,300,0,0" VerticalAlignment="Top" Width="65" Height="25" Click="BtnClose_Click"/>
 
     </Grid>
 </UserControl>

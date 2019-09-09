@@ -17,7 +17,7 @@ namespace M120Projekt
         {
             InitializeComponent();
             ValidationHelper.HideErrorLabels(grdRegister.Children);
-            btnUpdate.Content = "registrieren";
+            btnUpdate.Content = "Registrieren";
         }
 
         public UserUpdate(User user)
