@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -32,11 +32,12 @@ namespace M120Projekt.Model
         #region Applikationsschicht
         public Word() { }
         [NotMapped]
-        public string CalculatedAttr
+        public string Creator
         {
             get
             {
-                return "Im Getter kann Code eingefügt werden für berechnete Attribute";
+                User = User.ReadById(UserId);
+                return $"{User.Firstname} {User.Lastname}";
             }
         }
         public static List<Word> All()
@@ -46,6 +47,23 @@ namespace M120Projekt.Model
                 return (from record in db.Words select record).ToList();
             }
         }
+
+        public static List<Word> AllActive()
+        {
+            using (var db = new Context())
+            {
+                return (from record in db.Words where record.IsActive == true select record).ToList();
+            }
+        }
+
+        public static List<Word> ReadByCreatorId(int id)
+        {
+            using (var db = new Context())
+            {
+                return (from record in db.Words where record.UserId == id select record).ToList();
+            }
+        }
+
         public static Word ReadById(int id)
         {
             using (var db = new Context())
@@ -67,9 +85,11 @@ namespace M120Projekt.Model
                 return (from record in db.Words where record.Name.Contains(term) select record).ToList();
             }
         }
+
         public int Create()
         {
-            this.CreatedAt = DateTime.Now;
+            CreatedAt = DateTime.Now;
+            UpdatedAt = DateTime.Now;
             using (var db = new Context())
             {
                 db.Words.Add(this);
@@ -79,6 +99,7 @@ namespace M120Projekt.Model
         }
         public int Update()
         {
+            UpdatedAt = DateTime.Now;
             using (var db = new Context())
             {
                 db.Entry(this).State = System.Data.Entity.EntityState.Modified;

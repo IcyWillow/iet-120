@@ -1,4 +1,4 @@
-﻿using M120Projekt.Data;
+using M120Projekt.Data;
 using M120Projekt.Helper;
 using System.Text.RegularExpressions;
 using System.Windows;

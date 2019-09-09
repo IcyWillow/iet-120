@@ -18,7 +18,7 @@
                 </Style>
             </StackPanel.Resources>
             <Button Content="Spiel starten" x:Name="btnStart" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="55" FontSize="20"/>
-            <Button Content="Wörter" x:Name="btnWords" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="55" FontSize="20"/>
+            <Button Content="Wörter" x:Name="btnWords" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="55" FontSize="20" Click="BtnWords_Click"/>
             <Button Content="Highscores" x:Name="btnHighscores" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="55" FontSize="20"/>
             <Button Content="Beenden" x:Name="btnClose" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="55" FontSize="20" Click="BtnClose_Click"/>
         </StackPanel>

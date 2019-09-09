@@ -31,7 +31,6 @@ namespace M120Projekt
             ListUsers();
         }
 
-
         private void DtgAccount_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
         {
             if (e.PropertyName == "Password" || e.PropertyName == "CreatedAt" || e.PropertyName == "UpdatedAt" || e.PropertyName == "Id")

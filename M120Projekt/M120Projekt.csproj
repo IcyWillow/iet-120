@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -67,6 +67,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MyWords.xaml.cs">
+      <DependentUpon>MyWords.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WordManager.cs" />
+    <Compile Include="WordsAll.xaml.cs">
+      <DependentUpon>WordsAll.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WordsWindow.xaml.cs">
+      <DependentUpon>WordsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AccountListWindow.xaml.cs">
       <DependentUpon>AccountListWindow.xaml</DependentUpon>
     </Compile>
@@ -103,6 +113,18 @@
     <Compile Include="UserWindow.xaml.cs">
       <DependentUpon>UserWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="MyWords.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WordsAll.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WordsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="AccountListWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

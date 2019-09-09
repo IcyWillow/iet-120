@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="M120Projekt.MyWords"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:M120Projekt"
+             mc:Ignorable="d" 
+             d:DesignHeight="380" d:DesignWidth="525">
+    <Grid Height="380" Width="525">
+        <DataGrid x:Name="dtgWords" Margin="15,68,0,0" IsReadOnly="True" AutoGeneratingColumn="DtgWords_AutoGeneratingColumn" Height="212" VerticalAlignment="Top" CurrentCellChanged="DtgWords_CurrentCellChanged" HorizontalAlignment="Left" Width="360" />
+
+        <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Height="22" Margin="15,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" TextChanged="TxtSearch_TextChanged"/>
+
+        <Label Content="Wort suchen" HorizontalAlignment="Left" Margin="15,2,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnNew" Content="Erstellen" HorizontalAlignment="Left" Margin="425,68,0,0" VerticalAlignment="Top" Width="75" Height="27" Click="BtnNew_Click"/>
+        <Button x:Name="btnUpdate" Content="Ändern" HorizontalAlignment="Left" Margin="425,105,0,0" VerticalAlignment="Top" Width="75" Height="27" Click="BtnUpdate_Click"/>
+        <Button x:Name="btnDelete" Content="Löschen" HorizontalAlignment="Left" Margin="425,145,0,0" VerticalAlignment="Top" Width="75" Height="27" Click="BtnDelete_Click"/>
+    </Grid>
+</UserControl>

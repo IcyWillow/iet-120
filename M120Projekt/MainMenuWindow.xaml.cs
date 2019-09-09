@@ -42,6 +42,10 @@ namespace M120Projekt
 
         }
 
-  
+        private void BtnWords_Click(object sender, RoutedEventArgs e)
+        {
+            WordsWindow wordsWindow = new WordsWindow { Owner = this };
+            wordsWindow.ShowDialog();
+        }
     }
 }
