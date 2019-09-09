@@ -84,11 +84,6 @@ namespace M120Projekt
             btnShow.IsEnabled = false;
         }
 
-        private void BtnSearch_Click(object sender, RoutedEventArgs e)
-        {
-            ListUsers(txtSearch.Text);
-        }
-
         private void ListUsers(string query = null)
         {
             DisableButtons();
@@ -103,6 +98,10 @@ namespace M120Projekt
             userShowWindow.ShowDialog();
             ListUsers();
         }
-    }
 
+        private void TxtSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            ListUsers(txtSearch.Text);
+        }
+    }
 }
