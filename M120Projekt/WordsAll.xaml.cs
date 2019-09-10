@@ -34,7 +34,7 @@ namespace M120Projekt
 
         private void TxtSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            _wordManager.ListWords(dtgWords, txtSearch.Text);
         }
     }
 }
