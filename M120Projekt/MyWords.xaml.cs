@@ -16,19 +16,6 @@ namespace M120Projekt
             _wordManager.ListWords(dtgWords);
         }
 
-        private void DtgWords_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
-        {
-            if (e.PropertyName == "User" || e.PropertyName == "UserId" || e.PropertyName == "Id" || e.PropertyName == "Creator")
-            {
-                e.Column = null;
-            }
-
-            if (e.PropertyName == "Name") e.Column.Header = "Wort";
-            if (e.PropertyName == "CreatedAt") e.Column.Header = "Erstellt am";
-            if (e.PropertyName == "UpdatedAt") e.Column.Header = "Aktualisert am";
-            if (e.PropertyName == "IsActive") e.Column.Header = "Aktiv?";
-        }
-
         private void DtgWords_CurrentCellChanged(object sender, EventArgs e)
         {
             btnDelete.IsEnabled = true;

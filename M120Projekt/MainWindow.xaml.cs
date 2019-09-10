@@ -76,13 +76,6 @@ namespace M120Projekt
             if (user != null && user.IsPasswordCorrect(password)) Session.Start(user);
         }
 
-        private void BtnDebug_Click(object sender, RoutedEventArgs e)
-        {
-            Hide();
-            DebugWindow debugWindow = new DebugWindow {Owner = this};
-            debugWindow.ShowDialog();
-        }
-
         private void Window_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)

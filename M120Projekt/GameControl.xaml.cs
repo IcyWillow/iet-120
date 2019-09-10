@@ -10,18 +10,21 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace M120Projekt
 {
     /// <summary>
-    /// Interaction logic for GameWindow.xaml
+    /// Interaction logic for GameControl.xaml
     /// </summary>
-    public partial class GameWindow : Window
+    public partial class GameControl : UserControl
     {
-        public GameWindow()
+        private Difficulty _difficulty;
+        public GameControl(Difficulty difficulty)
         {
             InitializeComponent();
+            _difficulty = difficulty;
         }
     }
 }

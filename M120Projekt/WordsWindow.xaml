@@ -8,11 +8,11 @@
         mc:Ignorable="d"
         Title="World of Cara - Übersicht Wörter" Height="380" Width="525" Icon="pack://siteoforigin:,,,/Resources/object_leaf.ico">
     <Grid Height="380" Width="525">
-    <Grid x:Name="grdContent">
+        <Grid x:Name="grdContent">
 
-    </Grid>
-        <Button x:Name="btnMyWords" Content="Meine Wörter" HorizontalAlignment="Left" Margin="320,320,0,0" VerticalAlignment="Top" Width="85" Click="BtnMyWords_Click" />
-        <Button x:Name="btnAllWords" IsEnabled="False" Content="Alle Wörter" HorizontalAlignment="Left" Margin="215,320,0,0" VerticalAlignment="Top" Width="85" Click="BtnAllWords_Click" />
-        <Button x:Name="btnBack" Content="Zurück" HorizontalAlignment="Left" Margin="425,320,0,0" VerticalAlignment="Top" Width="75" Click="BtnBack_Click"/>
+        </Grid>
+        <Button x:Name="btnMyWords" Content="Meine Wörter" HorizontalAlignment="Left" Margin="320,305,0,0" VerticalAlignment="Top" Width="85" Click="BtnMyWords_Click" />
+        <Button x:Name="btnAllWords" IsEnabled="False" Content="Alle Wörter" HorizontalAlignment="Left" Margin="215,305,0,0" VerticalAlignment="Top" Width="85" Click="BtnAllWords_Click" />
+        <Button x:Name="btnBack" Content="Zurück" HorizontalAlignment="Left" Margin="425,305,0,0" VerticalAlignment="Top" Width="75" Click="BtnBack_Click"/>
     </Grid>
 </Window>

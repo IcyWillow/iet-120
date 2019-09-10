@@ -7,7 +7,14 @@
              mc:Ignorable="d" 
              d:DesignHeight="380" d:DesignWidth="525">
     <Grid Height="380" Width="525">
-        <DataGrid x:Name="dtgWords" Margin="15,68,0,0" IsReadOnly="True" AutoGeneratingColumn="DtgWords_AutoGeneratingColumn" Height="212" VerticalAlignment="Top" CurrentCellChanged="DtgWords_CurrentCellChanged" HorizontalAlignment="Left" Width="360" />
+        <DataGrid x:Name="dtgWords" SelectionMode="Single" Margin="15,68,0,0" IsReadOnly="True" AutoGenerateColumns="False" Height="212" VerticalAlignment="Top" CurrentCellChanged="DtgWords_CurrentCellChanged" HorizontalAlignment="Left" Width="360">
+        <DataGrid.Columns>
+            <DataGridTextColumn Header="Wort" Binding="{Binding Name}"/>
+            <DataGridCheckBoxColumn Header="Aktiv?" Binding="{Binding IsActive}"/>
+            <DataGridTextColumn Header="Erstellt am" Binding="{Binding CreatedAt, StringFormat=\{0:dd.MM.yyyy\}}"/>
+            <DataGridTextColumn Header="Aktualisert am"  Binding="{Binding UpdatedAt, StringFormat=\{0:dd.MM.yyyy\}}"/>
+        </DataGrid.Columns>
+        </DataGrid>
 
         <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Height="22" Margin="15,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" TextChanged="TxtSearch_TextChanged"/>
 

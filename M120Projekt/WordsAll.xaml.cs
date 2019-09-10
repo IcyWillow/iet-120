@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using System;
+using System.Windows.Controls;
 
 
 namespace M120Projekt
@@ -23,10 +24,12 @@ namespace M120Projekt
                 e.Column = null;
             }
 
+            if (e.PropertyType == typeof(DateTime)) e.Column.ClipboardContentBinding.StringFormat = "dd.MM.yyyy";
+
+            if (e.PropertyName == "CreatedAt") e.Column.Header = "Erstellt am";
+            if (e.PropertyName == "UpdatedAt") e.Column.Header = "Aktualisiert am";
             if (e.PropertyName == "Name") e.Column.Header = "Wort";
             if (e.PropertyName == "Creator") e.Column.Header = "Verfasser";
-            if (e.PropertyName == "CreatedAt") e.Column.Header = "Erstellt am";
-            if (e.PropertyName == "UpdatedAt") e.Column.Header = "Aktualisert am";
         }
 
         private void TxtSearch_TextChanged(object sender, TextChangedEventArgs e)

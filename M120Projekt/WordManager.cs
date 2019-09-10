@@ -28,7 +28,7 @@ namespace M120Projekt
                 Words = string.IsNullOrEmpty(query) ? Word.AllActive() : Word.Like(query);
             } else
             {
-                Words = string.IsNullOrEmpty(query) ? Word.ReadByCreatorId(_user.Id) : Word.Like(query);
+                Words = string.IsNullOrEmpty(query) ? Word.ReadByCreatorId(_user.Id) : Word.LikeByCreator(query, _user.Id);
             }
             dtg.ItemsSource = Words;
         }

@@ -35,6 +35,7 @@ namespace M120Projekt
                 wdwWord.Title = "World of Cara - Wört ändern";
                 txtWord.Text = _word.Name;
                 chkState.IsChecked = _word.IsActive;
+                btnNew.IsEnabled = false;
             }
         }
 

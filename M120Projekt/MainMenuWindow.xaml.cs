@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using M120Projekt.Data;
@@ -23,7 +24,6 @@ namespace M120Projekt
         public MainMenuWindow()
         {
             InitializeComponent();
-
             lblWelcome.Content = $"Willkommen {Session.User.Salutation} {Session.User.Lastname}";
         }
 
@@ -46,6 +46,35 @@ namespace M120Projekt
         {
             WordsWindow wordsWindow = new WordsWindow { Owner = this };
             wordsWindow.ShowDialog();
+        }
+
+        private void BtnStart_Click(object sender, RoutedEventArgs e)
+        {
+            HideGridElements();
+            grdContainer.Children.Clear();
+            grdContainer.Children.Add(new DifficultyControl());
+        }
+
+        private void HideGridElements()
+        {
+            foreach (UIElement c in grdMainMenu.Children)
+            {
+                if(c.GetType() != typeof(Grid)) c.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void ShowGridElements()
+        {
+            grdContainer.Children.Clear();
+            foreach (UIElement c in grdMainMenu.Children)
+            {
+                c.Visibility = Visibility.Visible;
+            }
+        }
+
+        public void RecoverState()
+        {
+            ShowGridElements();
         }
     }
 }

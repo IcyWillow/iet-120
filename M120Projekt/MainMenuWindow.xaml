@@ -7,7 +7,8 @@
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
         Title="World of Cara - Hauptmenü" Height="490" Width="640" Icon="pack://siteoforigin:,,,/Resources/object_leaf.ico">
-    <Grid Height="490" Width="640">
+
+    <Grid x:Name="grdMainMenu" Height="490" Width="640">
         <Label Content="World of Cara" HorizontalAlignment="Left" Margin="167,52,0,0" VerticalAlignment="Top" FontSize="48"/>
         <Label x:Name="lblWelcome" Content="Willkommen User.Salutation User.Name" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="210,150,209,0" VerticalAlignment="Top"/>
 
@@ -17,12 +18,16 @@
                     <Setter Property="Margin" Value="0,10,0,0"/>
                 </Style>
             </StackPanel.Resources>
-            <Button Content="Spiel starten" x:Name="btnStart" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="55" FontSize="20"/>
+            <Button Content="Spiel starten" x:Name="btnStart" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="55" FontSize="20" Click="BtnStart_Click"/>
             <Button Content="Wörter" x:Name="btnWords" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="55" FontSize="20" Click="BtnWords_Click"/>
             <Button Content="Highscores" x:Name="btnHighscores" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="55" FontSize="20"/>
             <Button Content="Beenden" x:Name="btnClose" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="55" FontSize="20" Click="BtnClose_Click"/>
         </StackPanel>
         <Button x:Name="btnAccountList" Content="CRUD Test (C)" HorizontalAlignment="Left" Margin="30,30,0,0" VerticalAlignment="Top" Width="100" Height="34" Click="BtnAccountList_Click"/>
+        <Grid x:Name="grdContainer">
+        </Grid>
     </Grid>
+  
+
 
 </Window>

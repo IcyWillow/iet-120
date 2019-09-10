@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Annotations;
 using M120Projekt.Data;
 
 namespace M120Projekt.Model
@@ -53,6 +54,14 @@ namespace M120Projekt.Model
             using (var db = new Context())
             {
                 return (from record in db.Words where record.IsActive == true select record).ToList();
+            }
+        }
+
+        public static List<Word> LikeByCreator(string term, int userId)
+        {
+            using (var db = new Context())
+            {
+                return (from record in db.Words where record.Name.Contains(term) && record.UserId == userId select record).ToList();
             }
         }
 
