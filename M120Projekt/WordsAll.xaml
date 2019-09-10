@@ -9,7 +9,7 @@
     <Grid Height="380" Width="525">
         <DataGrid x:Name="dtgWords" Margin="15,68,0,0" IsReadOnly="True"  Height="212" VerticalAlignment="Top" HorizontalAlignment="Left" Width="485" AutoGeneratingColumn="DtgWords_AutoGeneratingColumn" />
 
-        <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Height="22" Margin="15,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165"/>
+        <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Height="22" Margin="15,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" TextChanged="TxtSearch_TextChanged"/>
 
         <Label Content="Wort suchen" HorizontalAlignment="Left" Margin="15,2,0,0" VerticalAlignment="Top"/>
     </Grid>
