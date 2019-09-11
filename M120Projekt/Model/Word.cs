@@ -24,14 +24,6 @@ namespace M120Projekt.Model
         public int UserId { get; set; }
         [ForeignKey("UserId")]
         public User User { get; set; }
-        [Display(Name = "Erstellt am")]
-        [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}")]
-        public DateTime CreatedAt { get; set; }
-        [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}")]
-        public DateTime UpdatedAt { get; set; }
-        #endregion
-        #region Applikationsschicht
-        public Word() { }
         [NotMapped]
         public string Creator
         {
@@ -41,6 +33,15 @@ namespace M120Projekt.Model
                 return $"{User.Firstname} {User.Lastname}";
             }
         }
+        [Display(Name = "Erstellt am")]
+        [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}")]
+        public DateTime CreatedAt { get; set; }
+        [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}")]
+        public DateTime UpdatedAt { get; set; }
+        #endregion
+        #region Applikationsschicht
+        public Word() { }
+      
         public static List<Word> All()
         {
             using (var db = new Context())
