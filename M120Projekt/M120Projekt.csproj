@@ -75,6 +75,7 @@
     </Compile>
     <Compile Include="GameEngine.cs" />
     <Compile Include="Helper\ConvertBitmapToBitmapImage.cs" />
+    <Compile Include="Helper\SoundHelper.cs" />
     <Compile Include="MyWords.xaml.cs">
       <DependentUpon>MyWords.xaml</DependentUpon>
     </Compile>
@@ -215,9 +216,11 @@
     <Content Include="Resources\Guesses.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Maingame.wav" />
     <Content Include="Resources\object_leaf.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Win.wav" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\save.png">

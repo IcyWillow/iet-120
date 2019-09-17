@@ -1,18 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using M120Projekt.Data;
 using M120Projekt.Helper;
+using M120Projekt.Model;
 
 namespace M120Projekt
 {
@@ -32,6 +23,9 @@ namespace M120Projekt
             _difficulty = difficulty;
             txtHiddenWord.Text = _gameEngine.DisguisedWord();
             ShowDifficulty();
+            ChangedSoundIcon();
+            SoundHelper.PlayMusic();
+            imgCara.Source = null;
         }
 
         private void ShowDifficulty()
@@ -60,9 +54,18 @@ namespace M120Projekt
             }
         }
 
+        private void ChangedSoundIcon()
+        {
+            imgButtonMute.Source = SoundHelper.IsSoundOn
+                ? ConvertBitmapToBitmapImage.Convert(Properties.Resources.Unmuted)
+                : ConvertBitmapToBitmapImage.Convert(Properties.Resources.Muted);
+        }
+
         private void BtnMute_Click(object sender, RoutedEventArgs e)
         {
-
+            SoundHelper.IsSoundOn = !SoundHelper.IsSoundOn;
+            ChangedSoundIcon();
+            SoundHelper.Play(_gameState);
         }
 
         private void Refresh()
@@ -87,26 +90,57 @@ namespace M120Projekt
 
                if (_gameEngine.IsGameWon())
                {
-                   _gameState = GameState.Won;
+                   SoundHelper.PlayVictorySound();
                    lblMessage.Content = "Sie haben das Spiel gewonnen!";
+                    if (_gameEngine.Points > 0)
+                   {
+                       MessageBoxResult resultSave = MessageBox.Show($"Herzliche Gratullation! Sie haben das Spiel gewonnen.\n\nWort: {_gameEngine.GameWord.ToUpper()}\nPunkte: {_gameEngine.Points}\n\nMöchten Sie Ihr Punktzahl eintragen?",
+                       "Sieg", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                       if (resultSave == MessageBoxResult.Yes)
+                       {
+                           Highscore highscore = new Highscore();
+                           highscore.UserId = Session.User.Id;
+                           highscore.GameWord = _gameEngine.GameWord;
+                           highscore.Points = _gameEngine.Points;
+                           highscore.Create();
+                       }
+
+                       MessageBoxResult result = MessageBox.Show($"Möchten Sie nochmals spielen?",
+                                                        "Neues Spiel", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                       if (result == MessageBoxResult.Yes)
+                       {
+                           _gameEngine = new GameEngine(_difficulty);
+                           SoundHelper.PlayMusic();
+                            _gameState = GameState.Running;
+                           Refresh();
+                       }
+                       else
+                       {
+                           MainMenuWindow mainMenuWindow = (MainMenuWindow)Window.GetWindow(this);
+                           mainMenuWindow.RecoverState();
+                       }
+                   }
+                   
                }
 
                if (_gameEngine.IsGameOver())
                {
                    _gameState = GameState.Lost;
 
-                   MessageBoxResult result = MessageBox.Show($"Das Spielwort war {_gameEngine.GameWord.ToUpper()}. \nNochmal spielen?", "Niederlage", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                   MessageBoxResult result = MessageBox.Show($"Das Spielwort war {_gameEngine.GameWord.ToUpper()}. \nNochmal spielen?",
+                                                            "Niederlage", MessageBoxButton.YesNo, MessageBoxImage.Question);
                    if (result == MessageBoxResult.Yes)
                    {
                        _gameEngine = new GameEngine(_difficulty);
                        _gameState = GameState.Running;
-                       Refresh();
+                       SoundHelper.PlayMusic();
+                        Refresh();
                    }
                    else
                    {
                        MainMenuWindow mainMenuWindow = (MainMenuWindow)Window.GetWindow(this);
                        mainMenuWindow.RecoverState();
-                    }
+                   }
                 }
             }
         }

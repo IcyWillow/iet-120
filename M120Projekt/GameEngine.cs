@@ -10,12 +10,9 @@ namespace M120Projekt
 {
     public class GameEngine
     {
-        public SoundPlayer SndPlayer = new SoundPlayer();
         public int Points = 0;
         public int GibbetState = 0;
         public string GameWord;
-
-        private bool _isMusicOn = true;
         private List<char> _guesses = new List<char>();
         private Difficulty _difficulty;
 
@@ -23,25 +20,6 @@ namespace M120Projekt
         {
             _difficulty = difficulty;
             SelectRandomWord();
-        }
-
-        public void MusicOn(bool value)
-        {
-            _isMusicOn = value;
-        }
-
-        public void PlayMusic(string File)
-        {
-            SndPlayer.SoundLocation = Environment.CurrentDirectory + "//Sounds//" + File + ".wav";
-            if (_isMusicOn)
-            {
-                SndPlayer.PlayLooping();
-
-                SndPlayer.Stop();
-
-                SndPlayer.PlayLooping();
-            }
-
         }
 
         public void Guess(string guess, out string message)

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -13,6 +14,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using M120Projekt.Data;
+using M120Projekt.Helper;
 
 namespace M120Projekt
 {
@@ -81,6 +83,7 @@ namespace M120Projekt
 
         public void RecoverState()
         {
+            SoundHelper.SoundPlayer.Stop();
             ShowGridElements();
         }
     }

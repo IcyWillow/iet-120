@@ -131,6 +131,15 @@ namespace M120Projekt.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Maingame {
+            get {
+                return ResourceManager.GetStream("Maingame", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Muted {
@@ -177,6 +186,15 @@ namespace M120Projekt.Properties {
             get {
                 object obj = ResourceManager.GetObject("Unmuted", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Win {
+            get {
+                return ResourceManager.GetStream("Win", resourceCulture);
             }
         }
     }
