@@ -36,5 +36,10 @@ namespace M120Projekt
         {
             _wordManager.ListWords(dtgWords, txtSearch.Text);
         }
+
+        public void RefreshOnSwitch()
+        {
+            _wordManager.ListWords(dtgWords, txtSearch.Text);
+        }
     }
 }

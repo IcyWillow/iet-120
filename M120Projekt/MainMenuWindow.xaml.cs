@@ -72,6 +72,13 @@ namespace M120Projekt
             }
         }
 
+        public void StartGame(GameControl gameControl)
+        {
+            HideGridElements();
+            grdContainer.Children.Clear();
+            grdContainer.Children.Add(gameControl);
+        }
+
         public void RecoverState()
         {
             ShowGridElements();

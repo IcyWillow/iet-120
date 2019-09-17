@@ -121,6 +121,27 @@
   <data name="back" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Guesses" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Guesses.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KaraGibbet1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KaraGibbet1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KaraGibbet2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KaraGibbet2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KaraGibbet3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KaraGibbet3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KaraGibbet4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KaraGibbet4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KaraGibbet5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KaraGibbet5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Muted" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Muted.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="object_leaf" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\object_leaf.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -129,5 +150,8 @@
   </data>
   <data name="search" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Unmuted" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Unmuted.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

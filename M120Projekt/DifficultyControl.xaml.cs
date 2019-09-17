@@ -28,8 +28,9 @@ namespace M120Projekt
         }
 
         private void BtnStart_Click(object sender, RoutedEventArgs e)
-        { 
-            GameControl gameControl = new GameControl(_difficulty);
+        {
+            MainMenuWindow mainMenuWindow = (MainMenuWindow)Window.GetWindow(this);
+            mainMenuWindow.StartGame(new GameControl(_difficulty));
 
         }
 
@@ -57,8 +58,8 @@ namespace M120Projekt
 
     public enum Difficulty
     {
-        Easy = 0,
-        Medium = 1,
-        Hard = 2
+        Easy = 1,
+        Medium = 2,
+        Hard = 3
     }
 }

@@ -37,7 +37,7 @@ namespace M120Projekt
                 e.Column = null;
             }
 
-            if (e.PropertyName == "CreatedAt") e.Column.Header = "Erstell am:";
+            if (e.PropertyName == "CreatedAt") e.Column.Header = "Erstellt am:";
             if (e.PropertyName == "Lastname") e.Column.Header = "Nachname";
             if (e.PropertyName == "Salutation") e.Column.Header = "Anrede";
         }
@@ -51,6 +51,7 @@ namespace M120Projekt
         private void BtnAllWords_Click(object sender, RoutedEventArgs e)
         {
             btnMyWords.IsEnabled = true;
+            _wordsAll.RefreshOnSwitch();
             ChangeGridState(sender, _wordsAll);
         }
 

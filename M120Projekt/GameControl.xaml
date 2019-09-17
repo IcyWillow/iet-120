@@ -5,8 +5,30 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:M120Projekt"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+             d:DesignHeight="490" d:DesignWidth="640">
+    <Grid Height="500" Width="640">
+
+        <Image HorizontalAlignment="Left" Source="Resources/Guesses.png" Height="169" Margin="451,110,0,0" VerticalAlignment="Top" Width="122"/>
+
+
+        <Border Background="Black" BorderThickness="1" HorizontalAlignment="Left" Height="100" Margin="45,360,0,0" VerticalAlignment="Top" Width="555"/>
+        <Label x:Name="lblMessage"  Content="Nachricht" Foreground="White" HorizontalAlignment="Left" Margin="65,370,0,0" VerticalAlignment="Top" FontSize="16" Width="520" Height="37"/>
+        <TextBox x:Name="txtCommand" MaxLength="1" Background="Black" Foreground="White" HorizontalAlignment="Left" Height="38" Margin="65,412,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="520" FontSize="15" PreviewKeyDown="TxtCommand_PreviewKeyDown"/>
+        <Image x:Name="imgCara" Source="Resources/KaraGibbet5.png" HorizontalAlignment="Left" Height="192" Margin="45,87,0,0" VerticalAlignment="Top" Width="205"/>
+        <TextBlock x:Name="txtGuess" Foreground="White" HorizontalAlignment="Left" Margin="465,130,0,0" TextWrapping="WrapWithOverflow" VerticalAlignment="Top" Height="135" Width="95" FontSize="20"/>
+
+        <Button x:Name="btnMute" HorizontalAlignment="Left" Margin="495,15,0,0" VerticalAlignment="Top" Width="55" Height="55" Click="BtnMute_Click">
+            <Image Source="pack://siteoforigin:,,,/Resources/Unmuted.png"/>
+        </Button>
+        <Button x:Name="btnBack" HorizontalAlignment="Left" Margin="565,15,0,0" VerticalAlignment="Top" Width="55" Height="55" Click="BtnBack_Click">
+            <Image Source="pack://siteoforigin:,,,/Resources/Back.png"/>
+        </Button>
+        <Label Content="Punkte:" HorizontalAlignment="Left" Margin="55,10,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label x:Name="lblPoints" Content="0" HorizontalAlignment="Left" Margin="55,43,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <TextBox x:Name="txtHiddenWord" HorizontalAlignment="Left" IsReadOnly="True" Background="DarkRed" BorderBrush="Black" Foreground="White" TextAlignment="Center" Height="44" Margin="45,301,0,0" TextWrapping="Wrap" Text="_ _ _ _ _" VerticalAlignment="Top" Width="555" FontSize="25"/>
+        <Label Content="Versuche" HorizontalAlignment="Left" Margin="451,80,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label x:Name="lblDifficulty" Content="Difficulty" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="230,15,228,0" FontSize="20" VerticalAlignment="Top" Background="{x:Null}" Width="182" Height="40"/>
+
+
     </Grid>
 </UserControl>
