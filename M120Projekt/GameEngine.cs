@@ -25,6 +25,7 @@ namespace M120Projekt
 
         public void Guess(string guess, out string message)
         {
+            //Check users input:
             if (string.IsNullOrEmpty(guess))
             {
                 message = GameMessage(Message.Empty);
@@ -144,6 +145,7 @@ namespace M120Projekt
 
         public string GameMessage(Message message)
         {
+
             Random rnd = new Random();
             int randomPoints = rnd.Next(15, 35) + GetTimeMalus();
             switch (message)
@@ -174,14 +176,5 @@ namespace M120Projekt
             _lastGuess = DateTime.Now;
             return (int)malus;
         }
-    }
-
-    public enum Message
-    {
-        Wrong = 0,
-        AlreadyGuessed = 1,
-        IllegalCharacter = 2,
-        Correct = 3,
-        Empty = 4
     }
 }

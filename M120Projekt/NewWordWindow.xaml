@@ -6,14 +6,15 @@
         xmlns:local="clr-namespace:M120Projekt"
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
+        ResizeMode="CanMinimize"
         Title="World of Cara - Neues Wort" Height="230" Width="250">
     <Grid x:Name="grdNewWord">
         <Button x:Name="btnNew" IsEnabled="False" Content="Erstellen" HorizontalAlignment="Left" Margin="30,157,0,0" VerticalAlignment="Top" Width="75" Click="BtnNew_Click"/>
         <Button x:Name="btnClose" Content="Zurück" HorizontalAlignment="Left" Margin="135,157,0,0" VerticalAlignment="Top" Width="75" Click="BtnClose_Click"/>
-        <CheckBox x:Name="chkState" Content="Aktiv?" IsChecked="True" HorizontalAlignment="Left" Margin="30,110,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="chkState" Content="Aktiv?" IsChecked="False" HorizontalAlignment="Left" Margin="30,110,0,0" VerticalAlignment="Top" Checked="ChkState_Checked" Unchecked="ChkState_Checked"/>
         <TextBox x:Name="txtWord" HorizontalAlignment="Left" Height="23" Margin="30,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" TextChanged="TxtWord_TextChanged"/>
         <Label Content="Wort" HorizontalAlignment="Left" Margin="30,36,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblErrorWord" Tag="error" HorizontalAlignment="Left" Margin="30,85,0,0" VerticalAlignment="Top" Foreground="Red" Width="180" FontSize="9" RenderTransformOrigin="0.51,2.789"  Height="20"/>
+        <Label x:Name="lblErrorWord" Tag="error" HorizontalAlignment="Left" Margin="30,85,0,0" VerticalAlignment="Top" Foreground="Red" Width="180" FontSize="9" RenderTransformOrigin="0.51,2.789"  Height="25"/>
 
     </Grid>
 </Window>
