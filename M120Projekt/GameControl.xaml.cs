@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System;
+using System.Linq;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using M120Projekt.Data;
@@ -16,13 +18,14 @@ namespace M120Projekt
         private GameEngine _gameEngine;
         private GameState _gameState = GameState.Running;
         private readonly Difficulty _difficulty;
+        private readonly bool _isWordValid;
 
         public GameControl(Difficulty difficulty)
         {
             InitializeComponent();
             _gameEngine = new GameEngine(difficulty);
             _difficulty = difficulty;
-            CheckGameWord(_gameEngine.IsRandomWordValid());
+            _isWordValid = _gameEngine.IsRandomWordValid();
             Refresh("Bitte geben Sie eine Buchstabe ein.");
             ShowDifficulty();
             ChangedSoundIcon();
@@ -30,10 +33,10 @@ namespace M120Projekt
             imgCara.Source = null;
         }
 
-        private void CheckGameWord(bool isGameValid)
+        private void CheckGameWord()
         {
-            if (isGameValid) return;
-
+            if (_isWordValid) return;
+            SoundHelper.SoundPlayer.Stop();
             MessageBox.Show("Kein gültiges Wort für die Schwierigkeit gefunden. Wählen Sie bitte eine andere Schwierigkeit aus.",
                 "Kein Wort gefunden");
             ShowMainMenu();
@@ -101,6 +104,7 @@ namespace M120Projekt
         private void GameOver()
         {
             _gameState = GameState.Lost;
+            SoundHelper.PlayGameOverSound();
             MessageBoxResult result = MessageBox.Show($"Das Spielwort war {_gameEngine.GameWord.ToUpper()}. \nNochmals spielen?",
                 "Niederlage", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (result == MessageBoxResult.Yes) NewGame(); else ShowMainMenu();
@@ -127,16 +131,19 @@ namespace M120Projekt
 
         private void InsertHighscore()
         {
+            string gameWord = _gameEngine.GameWord.First().ToString().ToUpper() + _gameEngine.GameWord.Substring(1);
             Highscore highscore = new Highscore();
             highscore.UserId = Session.User.Id;
-            highscore.GameWord = _gameEngine.GameWord;
+            highscore.GameWord = gameWord;
             highscore.Points = _gameEngine.Points;
+            highscore.Difficulty = Convert.ToInt32(_difficulty);
             highscore.Create();
         }
 
         private void NewGame()
         {
             _gameEngine = new GameEngine(_difficulty);
+            _gameEngine.IsRandomWordValid();
             _gameState = GameState.Running;
             SoundHelper.PlayMusic();
             Refresh();
@@ -146,6 +153,11 @@ namespace M120Projekt
         {
             MainMenuWindow mainMenuWindow = (MainMenuWindow)Window.GetWindow(this);
             mainMenuWindow.RecoverState();
+        }
+
+        private void GameControl_Loaded(object sender, EventArgs e)
+        {
+            CheckGameWord();
         }
     }
 

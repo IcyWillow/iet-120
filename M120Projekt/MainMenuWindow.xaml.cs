@@ -86,5 +86,11 @@ namespace M120Projekt
             SoundHelper.SoundPlayer.Stop();
             ShowGridElements();
         }
+
+        private void BtnHighscores_Click(object sender, RoutedEventArgs e)
+        {
+            HighscoreWindow highscoreWindow = new HighscoreWindow();
+            highscoreWindow.ShowDialog();
+        }
     }
 }

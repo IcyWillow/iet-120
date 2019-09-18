@@ -1,12 +1,5 @@
 ﻿using M120Projekt.Enum;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.IO.Packaging;
-using System.Linq;
 using System.Media;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace M120Projekt.Helper
 {
@@ -26,7 +19,7 @@ namespace M120Projekt.Helper
 
         public static void PlayGameOverSound()
         {
-            SoundPlayer.Stream = Properties.Resources.Win;
+            SoundPlayer.Stream = Properties.Resources.Gameover;
             if (IsSoundOn)
             {
                 SoundPlayer.Play();

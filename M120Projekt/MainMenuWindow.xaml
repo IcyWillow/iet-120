@@ -20,7 +20,7 @@
             </StackPanel.Resources>
             <Button Content="Spiel starten" x:Name="btnStart" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="55" FontSize="20" Click="BtnStart_Click"/>
             <Button Content="Wörter" x:Name="btnWords" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="55" FontSize="20" Click="BtnWords_Click"/>
-            <Button Content="Highscores" x:Name="btnHighscores" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="55" FontSize="20"/>
+            <Button Content="Highscores" x:Name="btnHighscores" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="55" FontSize="20" Click="BtnHighscores_Click"/>
             <Button Content="Beenden" x:Name="btnClose" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="55" FontSize="20" Click="BtnClose_Click"/>
         </StackPanel>
         <Button x:Name="btnAccountList" Content="CRUD Test (C)" HorizontalAlignment="Left" Margin="30,30,0,0" VerticalAlignment="Top" Width="100" Height="34" Click="BtnAccountList_Click"/>

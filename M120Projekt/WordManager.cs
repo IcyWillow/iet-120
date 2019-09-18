@@ -12,7 +12,7 @@ namespace M120Projekt
     class WordManager
     {
         public List<Word> Words { get; set; }
-        private User _user;
+        private readonly User _user;
 
         public WordManager(User user = null)
         {
@@ -32,10 +32,6 @@ namespace M120Projekt
             }
             dtg.ItemsSource = Words;
         }
-
-        public void TextChanged(object sender, DataGrid dtg)
-        {
-            ListWords(dtg, ((TextBox)sender).Text);
-        }
+        
     }
 }

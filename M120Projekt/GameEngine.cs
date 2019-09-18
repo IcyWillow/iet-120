@@ -14,6 +14,7 @@ namespace M120Projekt
         public int Points = 0;
         public int GibbetState = 0;
         public string GameWord;
+        private DateTime _lastGuess = DateTime.Now;
         private List<char> _guesses = new List<char>();
         private Difficulty _difficulty;
 
@@ -143,25 +144,35 @@ namespace M120Projekt
 
         public string GameMessage(Message message)
         {
+            Random rnd = new Random();
+            int randomPoints = rnd.Next(15, 35) + GetTimeMalus();
             switch (message)
             {
                 case Message.Wrong:
-                    Points -= 50 * Convert.ToInt32(_difficulty);
+                    Points -= 30 * Convert.ToInt32(_difficulty) + randomPoints;
                     return "Diese Buchstabe ist nicht vorhanden. Sie wurden bestraft!";
                 case Message.AlreadyGuessed:
-                    Points -= 25 * Convert.ToInt32(_difficulty);
+                    Points -= 20 * Convert.ToInt32(_difficulty) + randomPoints;
                     return "Sie haben diese Buchstabe bereits eingegeben. Sie wurden bestraft!";
                 case Message.IllegalCharacter:
-                    Points -= 10 * Convert.ToInt32(_difficulty);
+                    Points -= 10 * Convert.ToInt32(_difficulty) + randomPoints;
                     return "Geben Sie bitte nur gültige Buchstaben ein. Sie wurden bestraft!";
                 case Message.Correct:
-                    Points += 50 * Convert.ToInt32(_difficulty);
+                    Points += 50 * Convert.ToInt32(_difficulty) + randomPoints;
                     return "Ihre Eingabe war korrekt!";
                 case Message.Empty:
                     return "Bitte geben Sie eine Buchstabe ein.";
             }
 
             return "";
+        }
+
+        private int GetTimeMalus()
+        {
+            DateTime now = DateTime.Now;
+            double malus = (_lastGuess - now).TotalSeconds;
+            _lastGuess = DateTime.Now;
+            return (int)malus;
         }
     }
 

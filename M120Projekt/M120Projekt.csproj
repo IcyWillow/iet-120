@@ -78,6 +78,12 @@
     <Compile Include="GameEngine.cs" />
     <Compile Include="Helper\ConvertBitmapToBitmapImage.cs" />
     <Compile Include="Helper\SoundHelper.cs" />
+    <Compile Include="HighscoreGridControl.xaml.cs">
+      <DependentUpon>HighscoreGridControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HighscoreWindow.xaml.cs">
+      <DependentUpon>HighscoreWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MyWords.xaml.cs">
       <DependentUpon>MyWords.xaml</DependentUpon>
     </Compile>
@@ -120,6 +126,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="GameControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HighscoreGridControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HighscoreWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -215,6 +229,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Gameover.wav" />
     <Content Include="Resources\Guesses.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

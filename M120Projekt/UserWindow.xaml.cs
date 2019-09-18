@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using M120Projekt.Data;
+using M120Projekt.Enum;
 
 namespace M120Projekt
 {

@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using M120Projekt.Data;
+using M120Projekt.Enum;
 
 namespace M120Projekt.Model
 {
@@ -16,6 +17,8 @@ namespace M120Projekt.Model
         [Required]
         public int Points { get; set; }
         [Required]
+        public int Difficulty { get; set; }
+        [Required]
         public string GameWord { get; set; }
         [Required]
         public int UserId { get; set; }
@@ -24,17 +27,19 @@ namespace M120Projekt.Model
         [Display(Name = "Erstellt am")]
         [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}")]
         public DateTime CreatedAt { get; set; }
-        #endregion
-        #region Applikationsschicht
-        public Highscore() { }
         [NotMapped]
-        public string CalculatedAttr
+        public string Player
         {
             get
             {
-                return "Im Getter kann Code eingefügt werden für berechnete Attribute";
+                User = User.ReadById(UserId);
+                return $"{User.Firstname} {User.Lastname}";
             }
         }
+        #endregion
+        #region Applikationsschicht
+        public Highscore() { }
+
         public static List<Highscore> All()
         {
             using (var db = new Context())
@@ -47,6 +52,16 @@ namespace M120Projekt.Model
             using (var db = new Context())
             {
                 return (from record in db.Highscores where record.Id == id select record).FirstOrDefault();
+            }
+        }
+        public static List<Highscore> AllByDifficulty(Difficulty difficulty)
+        {
+            int difficultyId = Convert.ToInt32(difficulty);
+            using (var db = new Context())
+            {
+                return (from record in db.Highscores
+                    where record.Difficulty == difficultyId
+                    select record).OrderByDescending(x => x.Points).ToList();
             }
         }
         public static List<Highscore> Where(string term)
