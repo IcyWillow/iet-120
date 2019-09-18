@@ -5,8 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:M120Projekt"
              mc:Ignorable="d" 
-             d:DesignHeight="490" d:DesignWidth="640" Loaded="GameControl_Loaded">
-    <Grid Height="500" Width="640">
+             d:DesignHeight="500" d:DesignWidth="640" Loaded="GameControl_Loaded">
+    <Grid Height="500" Width="640" Margin="0,0,0,-10" VerticalAlignment="Top">
 
         <Image HorizontalAlignment="Left" Source="Resources/Guesses.png" Height="169" Margin="451,110,0,0" VerticalAlignment="Top" Width="122"/>
 

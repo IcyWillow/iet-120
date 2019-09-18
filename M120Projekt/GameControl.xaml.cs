@@ -158,6 +158,7 @@ namespace M120Projekt
         private void GameControl_Loaded(object sender, EventArgs e)
         {
             CheckGameWord();
+            txtCommand.Focus();
         }
     }
 

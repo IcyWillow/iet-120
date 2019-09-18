@@ -145,7 +145,6 @@ namespace M120Projekt
 
         public string GameMessage(Message message)
         {
-
             Random rnd = new Random();
             int randomPoints = rnd.Next(15, 35) + GetTimeMalus();
             switch (message)
@@ -165,7 +164,6 @@ namespace M120Projekt
                 case Message.Empty:
                     return "Bitte geben Sie eine Buchstabe ein.";
             }
-
             return "";
         }
 
