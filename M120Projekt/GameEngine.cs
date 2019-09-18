@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Media;
 using System.Text.RegularExpressions;
 using System.Windows.Media.Imaging;
+using M120Projekt.Enum;
 using M120Projekt.Helper;
 using M120Projekt.Model;
 
@@ -19,7 +20,6 @@ namespace M120Projekt
         public GameEngine(Difficulty difficulty)
         {
             _difficulty = difficulty;
-            SelectRandomWord();
         }
 
         public void Guess(string guess, out string message)
@@ -73,12 +73,32 @@ namespace M120Projekt
             return guesses.ToUpper();
         }
 
-        private void SelectRandomWord()
+        public bool IsRandomWordValid()
         {
-            //TODO Implement select difficulty
-            List<Word> words = Word.AllActive();
             Random rnd = new Random();
-            GameWord = words[rnd.Next(0, words.Count)].Name.ToLower();
+            List<Word> words = Word.AllActive();
+            bool isWordValid = false;
+            int findCounter = 0;
+
+            while (!isWordValid && findCounter < 100)
+            {
+                GameWord = words[rnd.Next(0, words.Count)].Name.ToLower();
+                findCounter++;
+                switch (_difficulty)
+                {
+                    case Difficulty.Easy:
+                        if(GameWord.Length <= 5) isWordValid = true;
+                        continue;
+                    case Difficulty.Medium:
+                        if (GameWord.Length > 5 && GameWord.Length <= 9) isWordValid = true;
+                        continue;
+                    case Difficulty.Hard:
+                        if (GameWord.Length > 9) isWordValid = true;
+                        continue;
+                }
+            }
+
+            return isWordValid;
         }
 
         public BitmapImage GibbetImage()
@@ -95,8 +115,8 @@ namespace M120Projekt
                     return ConvertBitmapToBitmapImage.Convert(Properties.Resources.KaraGibbet4);
                 case 5:
                     return ConvertBitmapToBitmapImage.Convert(Properties.Resources.KaraGibbet5);
-                    default:
-                        return null;
+                default:
+                    return null;
             }
         }
 
@@ -104,17 +124,8 @@ namespace M120Projekt
         {
             string disguisedWord = string.Empty;
 
-            for (int i = 0; i < GameWord.Length; i++)
-            {
-                if (_guesses.Contains(GameWord[i]))
-                {
-                    disguisedWord += $"{GameWord[i]} ";
-                }
-                else
-                {
-                    disguisedWord += "_ ";
-                }
-            }
+            foreach (char c in GameWord)
+                disguisedWord += _guesses.Contains(c) ? $"{c} " : "_ ";
 
             return disguisedWord.ToUpper();
         }

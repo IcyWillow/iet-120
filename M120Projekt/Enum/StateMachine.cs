@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace M120Projekt
+namespace M120Projekt.Enum
 {
     public enum MachineState
     {

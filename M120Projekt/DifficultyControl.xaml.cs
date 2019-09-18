@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using M120Projekt.Enum;
 
 namespace M120Projekt
 {
@@ -56,10 +57,4 @@ namespace M120Projekt
         }
     }
 
-    public enum Difficulty
-    {
-        Easy = 1,
-        Medium = 2,
-        Hard = 3
-    }
 }

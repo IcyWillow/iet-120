@@ -70,6 +70,8 @@
     <Compile Include="DifficultyControl.xaml.cs">
       <DependentUpon>DifficultyControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Enum\Difficulty.cs" />
+    <Compile Include="Enum\GameState.cs" />
     <Compile Include="GameControl.xaml.cs">
       <DependentUpon>GameControl.xaml</DependentUpon>
     </Compile>
@@ -100,7 +102,7 @@
     <Compile Include="ScoreWindow.xaml.cs">
       <DependentUpon>ScoreWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="StateMachine.cs" />
+    <Compile Include="Enum\StateMachine.cs" />
     <Compile Include="RegistrationWindow.xaml.cs">
       <DependentUpon>RegistrationWindow.xaml</DependentUpon>
     </Compile>
