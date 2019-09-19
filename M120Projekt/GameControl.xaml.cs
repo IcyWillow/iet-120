@@ -60,7 +60,7 @@ namespace M120Projekt
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Zurück zum Hauptmenü?", "Spiel Beeden", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            MessageBoxResult result = MessageBox.Show("Zurück zum Hauptmenü?", "Spiel Beenden", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (result == MessageBoxResult.Yes) ShowMainMenu();
         }
 
@@ -91,6 +91,7 @@ namespace M120Projekt
 
         private void TxtCommand_PreviewKeyDown(object sender, KeyEventArgs e)
         {
+            //Game Loop
             if (e.Key == Key.Enter && _gameState == GameState.Running)
             {
                 _gameEngine.Guess(txtCommand.Text.ToLower(), out string msg);
