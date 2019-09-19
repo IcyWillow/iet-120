@@ -24,6 +24,11 @@ namespace M120Projekt
         public HighscoreWindow()
         {
             InitializeComponent();
+            LoadHighscores();
+        }
+
+        private void LoadHighscores()
+        {
             uscEasy.gridHighscore.ItemsSource = Highscore.AllByDifficulty(Difficulty.Easy);
             uscMedium.gridHighscore.ItemsSource = Highscore.AllByDifficulty(Difficulty.Medium);
             uscHard.gridHighscore.ItemsSource = Highscore.AllByDifficulty(Difficulty.Hard);

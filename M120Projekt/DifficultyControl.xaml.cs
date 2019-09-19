@@ -32,7 +32,6 @@ namespace M120Projekt
         {
             MainMenuWindow mainMenuWindow = (MainMenuWindow)Window.GetWindow(this);
             mainMenuWindow.StartGame(new GameControl(_difficulty));
-
         }
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e)

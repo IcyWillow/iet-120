@@ -45,7 +45,6 @@ namespace M120Projekt
                 btnDelete.IsEnabled = false;
                 btnUpdate.IsEnabled = false;
             }
-
             _wordManager.ListWords(dtgWords, txtSearch.Text);
         }
 

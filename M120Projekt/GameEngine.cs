@@ -11,12 +11,12 @@ namespace M120Projekt
 {
     public class GameEngine
     {
-        public int Points = 0;
-        public int GibbetState = 0;
+        public int Points;
+        private int _gibbetState;
         public string GameWord;
         private DateTime _lastGuess = DateTime.Now;
-        private List<char> _guesses = new List<char>();
-        private Difficulty _difficulty;
+        private readonly List<char> _guesses = new List<char>();
+        private readonly Difficulty _difficulty;
 
         public GameEngine(Difficulty difficulty)
         {
@@ -25,7 +25,7 @@ namespace M120Projekt
 
         public void Guess(string guess, out string message)
         {
-            //Check users input:
+            //Check users input -> Empty, Is letter, Is repeated, Is wrong
             if (string.IsNullOrEmpty(guess))
             {
                 message = GameMessage(Message.Empty);
@@ -65,7 +65,7 @@ namespace M120Projekt
 
         private void IncrementGibbetState()
         {
-            GibbetState++;
+            _gibbetState++;
         }
 
         public string GetGuesses()
@@ -105,7 +105,7 @@ namespace M120Projekt
 
         public BitmapImage GibbetImage()
         {
-            switch (GibbetState)
+            switch (_gibbetState)
             {
                 case 1:
                     return ConvertBitmapToBitmapImage.Convert(Properties.Resources.KaraGibbet1);
@@ -140,7 +140,7 @@ namespace M120Projekt
 
         public bool IsGameOver()
         {
-            return GibbetState >= 5;
+            return _gibbetState >= 5;
         }
 
         public string GameMessage(Message message)

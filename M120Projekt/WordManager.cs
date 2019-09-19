@@ -11,7 +11,7 @@ namespace M120Projekt
 {
     class WordManager
     {
-        public List<Word> Words { get; set; }
+        public List<Word> Words { get; private set; }
         private readonly User _user;
 
         public WordManager(User user = null)

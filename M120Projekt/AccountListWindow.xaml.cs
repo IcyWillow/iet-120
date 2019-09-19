@@ -66,8 +66,8 @@ namespace M120Projekt
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
-            Owner.Show();
             Close();
+            Owner.Show();
         }
 
         private void DtgAccount_CurrentCellChanged(object sender, EventArgs e)

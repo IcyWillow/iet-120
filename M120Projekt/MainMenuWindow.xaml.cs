@@ -31,15 +31,15 @@ namespace M120Projekt
 
         private void BtnClose_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
-            this.Owner.Show();
+            Close();
+            Owner.Show();
             Session.End();
         }
 
         private void BtnAccountList_Click(object sender, RoutedEventArgs e)
         {
-            AccountListWindow accountListWindow = new AccountListWindow {Owner = this};
             Hide();
+            AccountListWindow accountListWindow = new AccountListWindow {Owner = this};
             accountListWindow.ShowDialog();
 
         }
@@ -59,19 +59,15 @@ namespace M120Projekt
 
         private void HideGridElements()
         {
-            foreach (UIElement c in grdMainMenu.Children)
-            {
+            foreach (UIElement c in grdMainMenu.Children) 
                 if(c.GetType() != typeof(Grid)) c.Visibility = Visibility.Hidden;
-            }
         }
 
         private void ShowGridElements()
         {
             grdContainer.Children.Clear();
-            foreach (UIElement c in grdMainMenu.Children)
-            {
+            foreach (UIElement c in grdMainMenu.Children) 
                 c.Visibility = Visibility.Visible;
-            }
         }
 
         public void StartGame(GameControl gameControl)

@@ -8,7 +8,7 @@
              d:DesignHeight="490" d:DesignWidth="640">
     <Grid>
         <GroupBox HorizontalAlignment="Left" BorderBrush="GhostWhite"  VerticalAlignment="Top" Margin="108,235,0,0">
-            <StackPanel x:Name="Tag" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Height="25">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Height="25">
                 <StackPanel.Resources>
                     <Style TargetType="{x:Type RadioButton}">
                         <Setter Property="Margin" Value="30,0,30,0"/>
