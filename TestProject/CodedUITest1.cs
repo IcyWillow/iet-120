@@ -9,7 +9,7 @@ using Microsoft.VisualStudio.TestTools.UITesting.WindowsRuntimeControls;
 using Keyboard = Microsoft.VisualStudio.TestTools.UITesting.Keyboard;
 
 
-namespace CodedUITestM120
+namespace TestProject
 {
     /// <summary>
     /// Summary description for CodedUITest1

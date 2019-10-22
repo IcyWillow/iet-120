@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using M120Projekt.Enum;
 
 namespace M120Projekt
@@ -22,16 +24,40 @@ namespace M120Projekt
     public partial class DifficultyControl : UserControl
     {
         private Difficulty _difficulty = Difficulty.Easy;
+        private DispatcherTimer _timer = new DispatcherTimer();
+        private MainMenuWindow _window;
 
         public DifficultyControl()
         {
             InitializeComponent();
+            _timer.Interval = TimeSpan.FromMilliseconds(15);
+            _timer.Tick += TimerTick;
         }
 
         private void BtnStart_Click(object sender, RoutedEventArgs e)
         {
-            MainMenuWindow mainMenuWindow = (MainMenuWindow)Window.GetWindow(this);
-            mainMenuWindow.StartGame(new GameControl(_difficulty));
+            _timer.Start();
+            btnCancel.IsEnabled = false;
+            btnStart.IsEnabled = false;
+            foreach (RadioButton rb in stkPanel.Children) rb.IsEnabled = false;
+            psbLoad.Visibility = Visibility.Visible;
+            lblLoad.Visibility = Visibility.Visible;
+            _window = (MainMenuWindow)Window.GetWindow(this);
+        }
+
+        private void TimerTick(object sender, EventArgs e)
+        {
+            psbLoad.Value++;
+            if (psbLoad.Value >= 100)
+            {
+                _timer.Stop();
+                StartGame(_window);
+            }
+        }
+
+        private void StartGame(MainMenuWindow window)
+        {
+            window.StartGame(new GameControl(_difficulty));
         }
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e)

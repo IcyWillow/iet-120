@@ -6,15 +6,18 @@
         xmlns:local="clr-namespace:M120Projekt"
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
-        Title="World of Cara - Hauptmenü" Height="490" Width="640" Icon="pack://siteoforigin:,,,/Resources/object_leaf.ico">
+        Title="World of Cara - Hauptmenü" Height="490" Width="640" Icon="pack://siteoforigin:,,,/Resources/object_leaf.ico"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent">
 
     <Grid x:Name="grdMainMenu" Height="490" Width="640">
+        <Grid x:Name="grdContainer">
+        </Grid>
         <Label Content="World of Cara" HorizontalAlignment="Left" Margin="167,52,0,0" VerticalAlignment="Top" FontSize="48"/>
         <Label x:Name="lblWelcome" Content="Willkommen User.Salutation User.Name" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="210,150,209,0" VerticalAlignment="Top"/>
 
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="250,181,250,10">
             <StackPanel.Resources>
-                <Style TargetType="{x:Type Button}">
+                <Style TargetType="{x:Type Button}" BasedOn="{StaticResource DarkButton}">
                     <Setter Property="Margin" Value="0,10,0,0"/>
                 </Style>
             </StackPanel.Resources>
@@ -24,8 +27,7 @@
             <Button Content="Beenden" x:Name="btnClose" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="55" FontSize="20" Click="BtnClose_Click"/>
         </StackPanel>
         <Button x:Name="btnAccountList" Content="CRUD Test (C)" HorizontalAlignment="Left" Margin="30,30,0,0" VerticalAlignment="Top" Width="100" Height="34" Click="BtnAccountList_Click"/>
-        <Grid x:Name="grdContainer">
-        </Grid>
+      
     </Grid>
   
 

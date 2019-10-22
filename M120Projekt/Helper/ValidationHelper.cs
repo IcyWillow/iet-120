@@ -20,7 +20,7 @@ namespace M120Projekt.Helper
             if (sender != null)
             {
                 ((Control)sender).Background = !string.IsNullOrEmpty(label.Content.ToString())
-                    ? new SolidColorBrush(Colors.IndianRed) : new SolidColorBrush(Colors.LightGreen);
+                    ? new SolidColorBrush(Colors.DarkRed) : new SolidColorBrush(Colors.DarkGreen);
             }
         }
 
@@ -49,7 +49,7 @@ namespace M120Projekt.Helper
         public static void BlinkForm(Control control, int interval)
         {
             int round = interval % 2;
-            control.Background = round == 0 ? new SolidColorBrush(Colors.IndianRed) : new SolidColorBrush(Colors.White);
+            control.Background = round == 0 ? new SolidColorBrush(Colors.DarkRed) : new SolidColorBrush((Color)ColorConverter.ConvertFromString("#515151"));
         }
     }
 }

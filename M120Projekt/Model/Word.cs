@@ -17,7 +17,7 @@ namespace M120Projekt.Model
         [Key]
         public int Id { get; set; }
         [Required]
-        [StringLength(30, ErrorMessage = "{0}länge muss zwischen {2} und {1} sein.", MinimumLength = 3)]
+        [StringLength(50, ErrorMessage = "{0}länge muss zwischen {2} und {1} sein.", MinimumLength = 3)]
         [Display(Name = "Wort")]
         public string Name { get; set; }
         public bool IsActive { get; set; }

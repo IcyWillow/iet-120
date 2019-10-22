@@ -6,15 +6,17 @@
              xmlns:local="clr-namespace:M120Projekt"
              mc:Ignorable="d" 
              d:DesignHeight="490" d:DesignWidth="640">
-    <Grid>
-        <GroupBox HorizontalAlignment="Left" BorderBrush="GhostWhite"  VerticalAlignment="Top" Margin="108,235,0,0">
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Height="25">
+    <Grid x:Name="grdContainer">
+        <GroupBox HorizontalAlignment="Left" BorderBrush="GhostWhite" VerticalAlignment="Top" Margin="108,235,0,0">
+            <StackPanel x:Name="stkPanel" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Height="25">
                 <StackPanel.Resources>
-                    <Style TargetType="{x:Type RadioButton}">
+                    <Style TargetType="{x:Type RadioButton}" BasedOn="{StaticResource DarkRadioButton}">
                         <Setter Property="Margin" Value="30,0,30,0"/>
+                        
                     </Style>
+                   
                 </StackPanel.Resources>
-                <RadioButton x:Name="rdbEasy" Content="Einfach"  FontSize="18" IsChecked="True" Checked="RdbEasy_Checked"/>
+                <RadioButton x:Name="rdbEasy" Content="Einfach" FontSize="18" IsChecked="True" Checked="RdbEasy_Checked"/>
                 <RadioButton x:Name="rdbMedium" Content="Mittel" FontSize="18" Checked="RdbMedium_Checked"/>
                 <RadioButton x:Name="rdbHard" Content="Schwierig" FontSize="18" Checked="RdbHard_Checked"/>
             </StackPanel>
@@ -23,6 +25,8 @@
         <Label Content="Wählen Sie bitte die Schwierigkeit aus." HorizontalAlignment="Center" Margin="147,133,145,0" VerticalAlignment="Top" FontSize="20"/>
         <Button x:Name="btnStart" Content="Starten" HorizontalAlignment="Left" Margin="187,365,0,0" VerticalAlignment="Top" Width="93" Height="35" Click="BtnStart_Click"/>
         <Button x:Name="btnCancel" Content="Abbrechen" HorizontalAlignment="Left" Margin="360,365,0,0" VerticalAlignment="Top" Width="93" Height="35" Click="BtnCancel_Click"/>
+        <ProgressBar x:Name="psbLoad" Visibility="Hidden" HorizontalAlignment="Left" Height="25" Margin="215,305,0,0" VerticalAlignment="Top" Width="221"/>
+        <Label x:Name="lblLoad" Content="Das Wort wird gesucht..." Visibility="Hidden" HorizontalAlignment="Center" Margin="250,279,252,0" VerticalAlignment="Top"/>
 
     </Grid>
 </UserControl>
